@@ -27,9 +27,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development"
   },
+  "engines": {
+    "node": "13.10.1",
+    "npm": "6.13.7"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karapliu/pickle-app.git"
+    "url": "git+https://github.com/karapliu/pickle-app.git",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
