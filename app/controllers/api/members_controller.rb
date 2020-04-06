@@ -6,7 +6,7 @@ class Api::MembersController < ApplicationController
       login!(@member)
       render 'api/members/show'
     else
-      rener json: @member.errors.full_messages, status 422
+      render json: @member.errors.full_messages, status: 422
     end
   end
 

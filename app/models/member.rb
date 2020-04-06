@@ -1,7 +1,7 @@
 class Member < ApplicationRecord
   validates :first_name, :last_name, :zipcode, :password_digest, presence: true
   validates :email, :session_token, presence: true, uniqueness: true
-  validates :password, length: { minimum: 6 }, allow_nil: false
+  validates :password, length: { minimum: 6 }, allow_nil: true
   after_initialize :ensure_session_token
 
   attr_reader :password
@@ -32,5 +32,6 @@ class Member < ApplicationRecord
   def self.find_by_credentials(email, password) 
     member = Member.find_by(email: email)
     return nil unless member && member.is_password?(password)
+    member
   end
 end
