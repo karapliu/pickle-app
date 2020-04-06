@@ -12,7 +12,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    @member = current_user
+    @member = current_member
 
     if @member
       logout!

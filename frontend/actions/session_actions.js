@@ -1,0 +1,4 @@
+export const RECEIVE_CURRENT_MEMBER = 'RECEIVE_CURRENT_MEMBER';
+export const LOGOUT_CURRENT_MEMBER = 'LOGOUT_CURRENT_MEMBER';
+
+// receiveCurrentUser = 
