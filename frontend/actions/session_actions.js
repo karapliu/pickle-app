@@ -15,19 +15,19 @@ const logoutCurrentMember = () => ({
 
 const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
-  errors
+  errors: errors.responseJSON
 });
 
 export const signup = member => dispatch => (
   APIUtil.signup(member)
     .then(member => dispatch(receiveCurrentMember(member)),
-    err => dispatch(receiveErrors(err.responseJSON)))
+    err => dispatch(receiveErrors(err)))
 );
 
 export const login = member => dispatch => (
   APIUtil.login(member)
     .then(member => dispatch(receiveCurrentMember(member)),
-    err => dispatch(receiveErrors(err.responseJSON)))
+    err => dispatch(receiveErrors(err)))
 );
 
 export const logout = () => dispatch => (

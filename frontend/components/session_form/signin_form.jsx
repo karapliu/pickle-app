@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -15,6 +15,7 @@ class SignInForm extends React.Component {
     e.preventDefault();
     const member = Object.assign({}, this.state);
     this.props.processForm(member);
+    <Redirect to="/" />
   }
 
   update(field) {
@@ -28,7 +29,7 @@ class SignInForm extends React.Component {
     ));
 
     return(
-      <ul>{errorsLis}</ul>
+      <ul className="form-errors">{errorsLis}</ul>
     );
   }
 

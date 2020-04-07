@@ -72,3 +72,7 @@
 .session-form-submit:active {
   border-style: none;
 }
+
+.form-errors {
+  color: red;
+}
