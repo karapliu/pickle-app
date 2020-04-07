@@ -67,7 +67,7 @@
 .two-box-container-2 {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
 }
 
 .left {
@@ -137,6 +137,7 @@
 }
 
 .gpig-img {
+  position: relative;
   margin: auto;
   background-image: image-url("funny-pig.jpg");
   background-size: cover;
@@ -145,4 +146,36 @@
   height: 550px;
   z-index: 2;
   border: 1px solid blue;
+}
+
+.quote {
+  position: absolute;
+  top: -40px;
+  left: 10%;
+  width: 300px;
+  height: 250px;
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.quote-border {
+  width: 40px;
+  height: 2px;
+  margin-bottom: 20px;
+  background-color: #14a96d
+}
+
+.quote-bottom {
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 15px;
+}
+
+.author {
+  color: #66727C;
 }

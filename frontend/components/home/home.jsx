@@ -69,7 +69,14 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="gpig-img"></div>
+        <div className="gpig-img">
+          <div className="quote">
+            <div className="quote-border" />
+            My Pickle sitter was amazing! She sent me updates and took care of my guinea pig as if
+            he was her own. <span className="author">- Nancy M.</span>
+            <div className="quote-bottom">We're The Guinea Pig People.</div>
+          </div>
+        </div>
       </div>
     </>
   );
