@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const NavBar = ({ currentMember, logout }) => {
   const sessionLinks = () => (
     <div className="session-links">
-      <Link to="/signin">Sign in</Link> | 
       <Link to="/signup">Sign up</Link>
+      <Link to="/signin">Sign in</Link>
     </div>
   );
 
