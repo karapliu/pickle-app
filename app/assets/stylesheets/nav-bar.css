@@ -1,7 +1,6 @@
 .header {
   background-color: #FFFFFF;
   border-bottom: 1px solid #CFD7DE;
-  margin-bottom: 50px;
 }
 
 .nav-bar {
@@ -12,6 +11,11 @@
   width: 1100px;
   font-size: 14px;
   margin: 0 auto;
+}
+
+.home {
+  background-color: none;
+  border-bottom: none;
 }
 
 .left-nav {
