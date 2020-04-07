@@ -1,0 +1,69 @@
+.session-form-container {
+  margin: auto;
+  width: 520px;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.session-form-container h1 {
+  text-align: center;
+  font-weight: 900;
+  font-size: 35px;
+  margin-bottom: 35px;
+}
+
+.session-form-container p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.session-form-container p > a {
+  text-decoration: none;
+  color: #06748A;
+}
+
+.session-form-container p > a:hover {
+  text-decoration: underline;
+  color: #033641;
+}
+
+.session-form-label {
+  display: block;
+  margin: 5px 5px 20px 5px;
+}
+
+.session-form-input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 3px 3px 3px 5px;
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.session-form-input:focus {
+  outline: none;
+  border: 1px solid #06748A;
+}
+
+.session-form-submit {
+  display: block;
+  width: 100%;
+  height: 45px;
+  background-color: #14A96D;
+  border: #14A96D;
+  color: #FFFFFF;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.session-form-submit:hover {
+  cursor: pointer;
+  background-color: #11925E;
+}

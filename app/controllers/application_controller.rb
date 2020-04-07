@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def current_member
     return nil unless session[:session_token]
-    @current_user ||= Member.find_by(session_token: session[:session_token])
+    @current_member ||= Member.find_by(session_token: session[:session_token])
   end
 
   def ensure_logged_in
