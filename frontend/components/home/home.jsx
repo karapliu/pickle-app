@@ -17,7 +17,7 @@ const Home = () => {
       <div className="home-container-2">
         <h3>Services for every guinea pig</h3>
 
-        <div className="two-box-container">
+        <div className="two-box-container-2">
           <div className="left">
             <div className="logo-text-container">
               <div className="logo"><i class="fas fa-suitcase"></i></div>
@@ -68,6 +68,8 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className="gpig-img"></div>
       </div>
     </>
   );

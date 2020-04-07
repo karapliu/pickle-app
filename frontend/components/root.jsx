@@ -7,7 +7,6 @@ const Root = ({ store }) => (
   <Provider store={store}>
     <HashRouter>
       <Route path="/" component={App} />
-      {/* <App /> */}
     </HashRouter>
   </Provider>
 );

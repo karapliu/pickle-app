@@ -53,7 +53,7 @@
 .home-container-2 {
   background-color: white;
   margin-top: 0px;
-  height: 800px;
+  height: 1300px;
 }
 
 .home-container-2 h3 {
@@ -62,6 +62,12 @@
   font-weight: 700;
   padding-top: 80px;
   margin-bottom: 30px;
+}
+
+.two-box-container-2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .left {
@@ -128,4 +134,15 @@
 
 .check {
   color: #14A96D;
+}
+
+.gpig-img {
+  margin: auto;
+  background-image: image-url("funny-pig.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1100px;
+  height: 550px;
+  z-index: 2;
+  border: 1px solid blue;
 }
