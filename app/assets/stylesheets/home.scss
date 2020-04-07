@@ -2,14 +2,13 @@
   text-align: center;
   background-image: image-url("guinea-pig.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   width: 100%;
   height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1;
-  vertical-align: middle;
 }
 
 .home-div {
@@ -54,13 +53,13 @@
 .home-container-2 {
   background-color: white;
   margin-top: 0px;
-  vertical-align: middle;
   height: 800px;
 }
 
-h3 {
+.home-container-2 h3 {
   text-align: center;
   font-size: 35px;
+  display: block;
 }
 
 .left {

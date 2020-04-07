@@ -14,6 +14,10 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const newMember = Object.assign({}, this.state, { ['zipcode']: parseInt(this.state.zipcode) });

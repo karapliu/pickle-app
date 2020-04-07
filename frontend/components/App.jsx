@@ -6,7 +6,8 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import Home from './home/home';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 
-const App = () => {
+const App = (props) => {
+  // now you can check out props to access route information.
   const headerClass = () => {
     if (location.hash=== "#/" ) {
       return "header home"
