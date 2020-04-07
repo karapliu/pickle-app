@@ -43,7 +43,7 @@
   border-radius: 5px;
   padding: 3px 3px 3px 5px;
   margin-top: 2px;
-  font-size: 12px;
+  font-size: inherit;
 }
 
 .session-form-input:focus {
@@ -66,4 +66,8 @@
 .session-form-submit:hover {
   cursor: pointer;
   background-color: #11925E;
+}
+
+.session-form-submit:active {
+  border-style: none;
 }
