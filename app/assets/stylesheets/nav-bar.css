@@ -1,0 +1,29 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  height: 45px;
+  padding: 0px 200px;
+  margin-bottom: 50px;
+  align-items: center;
+  font-size: 15px;
+  border-bottom: 1px solid #CFD7DE;
+}
+
+.title a {
+  font-size: 35px;
+  text-decoration: none;
+  font-family: 'Paytone One', sans-serif;
+  color: #14A96D;
+}
+
+.session-links a {
+  text-decoration: none;
+  margin-right: 20px;
+  color: #66727C
+}
+
+.session-links a:hover {
+  color: #033641
+};
+
