@@ -6,10 +6,16 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 
 const App = () => (
   <>
-    <nav className="nav-bar">
-      <h1 className="title"><Link to="/">Pickle</Link></h1>
-      <NavBarContainer />
-    </nav>
+    <header className="header">
+      <nav className="nav-bar">
+        <div className="left-nav">
+          <h1 className="title"><Link to="/">Pickle</Link></h1>
+          <Link className="nav-links" to="/"><i className="far fa-question-circle"></i> Search Sitters</Link>
+          <Link className="nav-links" to="/signup"><i className="far fa-heart"></i> Become a Sitter</Link>
+        </div>
+        <NavBarContainer />
+      </nav>
+    </header>
 
     <Route path="/signup" component={SignUpFormContainer} />
     <Route path="/signin" component={SignInFormContainer} />
