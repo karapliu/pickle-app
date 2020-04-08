@@ -20,9 +20,9 @@ class SignInForm extends React.Component {
     this.setState({
       email: 'demouser@demo.com',
       password: 'password!'
-    })
-    const member = Object.assign({}, this.state);
-    this.props.processForm(member);
+    });
+
+    this.props.processForm(this.state);
     <Redirect to="/" />
   }
 
@@ -57,7 +57,7 @@ class SignInForm extends React.Component {
           <label className="session-form-label">
             Email
             <input
-              type="text"
+              type="email"
               onChange={this.update('email')}
               value={this.state.email}
               className="session-form-input" />
