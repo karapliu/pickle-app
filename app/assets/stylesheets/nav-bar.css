@@ -1,13 +1,42 @@
+.header {
+  z-index: 10;
+  display: block;
+  position: relative;
+}
+
+.title-white a {
+  font-size: 35px;
+  text-decoration: none;
+  font-family: 'Paytone One', sans-serif;
+  color: white;
+  margin-right: 30px; 
+}
+
+.links-white {
+  text-decoration: none;
+  margin-right: 20px;
+  color: white;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  background-color: #FFFFFF;
-  height: 45px;
-  padding: 0px 200px;
-  margin-bottom: 50px;
   align-items: center;
-  font-size: 15px;
+  height: 45px;
+  width: 1100px;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+.shown {
   border-bottom: 1px solid #CFD7DE;
+  background-color: white;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  width: 400px;
 }
 
 .title a {
@@ -15,15 +44,16 @@
   text-decoration: none;
   font-family: 'Paytone One', sans-serif;
   color: #14A96D;
+  margin-right: 30px; 
 }
 
-.session-links a {
+.nav-links {
   text-decoration: none;
   margin-right: 20px;
-  color: #66727C
+  color: #66727C;
 }
 
-.session-links a:hover {
-  color: #033641
+.nav-links:hover {
+  color: #033641;
 };
 

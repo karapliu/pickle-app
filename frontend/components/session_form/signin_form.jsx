@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -9,23 +9,50 @@ class SignInForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
+  demoLogin() {
+    this.setState({
+      email: 'demouser@demo.com',
+      password: 'password!'
+    })
+    const member = Object.assign({}, this.state);
+    this.props.processForm(member);
+    <Redirect to="/" />
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const member = Object.assign({}, this.state);
     this.props.processForm(member);
+    <Redirect to="/" />
   }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
+  renderErrors() {
+    const { errors } = this.props;
+    const errorsLis = errors.map((err, i) => (
+      <li key={`err-${i}`}>{err}</li>
+    ));
+
+    return(
+      <ul className="form-errors">{errorsLis}</ul>
+    );
+  }
+
   render() {
     return (
       <div className="session-form-container">
         <h1>Sign In to Pickle</h1>
-
+        {this.renderErrors()}
         <form className="session-form" onSubmit={this.handleSubmit}>
           <label className="session-form-label">
             Email
@@ -46,6 +73,7 @@ class SignInForm extends React.Component {
           </label>
 
           <button className="session-form-submit" type="submit">Sign In</button>
+          <button className="session-form-submit" type="submit" onClick={this.demoLogin}>Demo User</button>
         </form>
         <p>Don't have a Pickle account? <Link to="/signup">Sign up now.</Link></p>
       </div>

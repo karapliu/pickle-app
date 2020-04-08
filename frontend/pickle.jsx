@@ -9,20 +9,18 @@ import { signup, login, logout } from './util/session_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  let store;
+  let preloadedState;
   if (window.currentMember) {
-    const preloadedState = {
+    preloadedState = {
       entities: {
         members: { [window.currentMember.id]: window.currentMember }
       },
       session: { currentMemberId: window.currentMember.id }
     };
-    store = configureStore(preloadedState);
     delete window.currentMember;
-  } else {
-    store = configureStore();
-  }
-
+  };
+  const store = configureStore(preloadedState);
+  
   // TESTING
   window.signup = signup;
   window.login = login;
