@@ -20,35 +20,35 @@ const Home = () => {
         <div className="two-box-container-2">
           <div className="left">
             <div className="logo-text-container">
-              <div className="logo"><i class="fas fa-suitcase"></i></div>
+              <div className="logo"><i className="fas fa-suitcase"></i></div>
               <div className="text">
                 <h6>Guinea Pig Boarding</h6>
                 <p>Perfect if you need overnight pet care.</p>
               </div>
             </div>
             <div className="logo-text-container">
-              <div className="logo"><i class="fas fa-home"></i></div>
+              <div className="logo"><i className="fas fa-home"></i></div>
               <div className="text">
                 <h6>House Sitting</h6>
                 <p>Great if you need overnight pet or house-sitting services.</p>
               </div>
             </div>
             <div className="logo-text-container">
-              <div className="logo"><i class="fas fa-paw"></i></div>
+              <div className="logo"><i className="fas fa-paw"></i></div>
               <div className="text">
                 <h6>Guinea Pig Grooming</h6>
                 <p>Whenever your guinea pig needs a pamper.</p>
               </div>
             </div>
             <div className="logo-text-container">
-              <div className="logo"><i class="fas fa-sun"></i></div>
+              <div className="logo"><i className="fas fa-sun"></i></div>
               <div className="text">
                 <h6>Guinea Pig Day Care</h6>
                 <p>Daytime pet care in your sitter's guinea pig friendly home.</p>
               </div>
             </div>
             <div className="logo-text-container">
-              <div className="logo"><i class="fas fa-carrot"></i></div>
+              <div className="logo"><i className="fas fa-carrot"></i></div>
               <div className="text">
                 <h6>Drop-in Visits</h6>
                 <p>For check-ins and play dates.</p>
@@ -57,13 +57,13 @@ const Home = () => {
           </div>
           <div className="right">
             <div className="right-top">
-              <i class="fas fa-ribbon right-top-logo"></i>
+              <i className="fas fa-ribbon right-top-logo"></i>
               <h4>Book with pet sitters that you can trust</h4>
             </div>
             <div className="right-bottom">
-              <p><i class="fas fa-check check"></i> All new sitters pass a basic background check</p>
-              <p><i class="fas fa-check check"></i> All sitters provide a detailed profile and personal information</p>
-              <p><i class="fas fa-check check"></i> All sitters are approved by our team of sitter specialists</p>
+              <p><i className="fas fa-check check"></i> All new sitters pass a basic background check</p>
+              <p><i className="fas fa-check check"></i> All sitters provide a detailed profile and personal information</p>
+              <p><i className="fas fa-check check"></i> All sitters are approved by our team of sitter specialists</p>
               <Link to="/signup"><button>Book your next Pickle sitter</button></Link>
             </div>
           </div>
@@ -85,19 +85,19 @@ const Home = () => {
         <div className="step-line-container">
           <ul className="step-line">
             <li>
-              <i class="fas fa-clipboard-list container-4-icon"></i>
+              <i className="fas fa-clipboard-list container-4-icon"></i>
               <h6 className="home-h6">Discover nearby, trusted sitters</h6>
               <p>Get matched with one of our on-demand guinea-pig groomers, or browse 
                 for an overnight or day  care sitter
               </p>
             </li>
             <li>
-              <i class="fas fa-mobile-alt container-4-icon"></i>
+              <i className="fas fa-mobile-alt container-4-icon"></i>
               <h6 className="home-h6">Book &#x26; pay on Pickle</h6>
               <p>Book and pay securely through the website or app</p>
             </li>
             <li>
-              <i class="far fa-grin-wink container-4-icon"></i>
+              <i className="far fa-grin-wink container-4-icon"></i>
               <h6 className="home-h6">Relax</h6>
               <p>Get the Pickle Guarantee, 24/7 support, and reservation protection</p>
             </li>
@@ -110,7 +110,7 @@ const Home = () => {
       </div>
       <div className="all-sitters-container">
         <div className="all-sitters-content">
-          <h2>Thousands of pet sitters across the United States&nbsp;&nbsp;&nbsp;<i class="fas fa-flag-usa"></i></h2>
+          <h2>Thousands of pet sitters across the United States&nbsp;&nbsp;&nbsp;<i className="fas fa-flag-usa"></i></h2>
           <div className="all-states">
             <p>Alabama</p>
             <p>Alaska</p>
@@ -163,7 +163,7 @@ const Home = () => {
             <p>Wisconsin</p>
             <p>Wyoming</p>
           </div>
-          <h2>Trusted around the world&nbsp;&nbsp;&nbsp;<i class="fas fa-globe"></i></h2>
+          <h2>Trusted around the world&nbsp;&nbsp;&nbsp;<i className="fas fa-globe"></i></h2>
           <div className="countries">
             <p>Canada</p>
             <p>United Kingdom</p>
