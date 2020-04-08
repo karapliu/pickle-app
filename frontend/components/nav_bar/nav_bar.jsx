@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ currentMember, logout }) => {
-  const navLinksClass = () => {
+class NavBar extends React.Component {
+  navLinksClass() {
     if (location.hash === "#/") {
       return "links-white"
     } else {
@@ -10,22 +10,26 @@ const NavBar = ({ currentMember, logout }) => {
     }
   };
 
-  const sessionLinks = () => (
-    <div className="session-links">
-      <Link className={navLinksClass()} to="/signup">Sign Up</Link>
-      <Link className={navLinksClass()} to="/signin">Sign In</Link>
-      <Link className={navLinksClass()} to="/"><i className="far fa-question-circle"></i> Help</Link>
-    </div>
-  );
+  render() {
+    const { currentMember, logout } = this.props;
 
-  const loggedIn = () => (
-    <div>
-    <h4>{currentMember.first_name}</h4>
-    <button onClick={logout}>Sign out</button>
-    </div>
-  );
+    const sessionLinks = () => (
+      <div className="session-links">
+        <Link className={this.navLinksClass()} to="/signup">Sign Up</Link>
+        <Link className={this.navLinksClass()} to="/signin">Sign In</Link>
+        <Link className={this.navLinksClass()} to="/"><i className="far fa-question-circle"></i> Help</Link>
+      </div>
+    );
 
-  return currentMember ? loggedIn() : sessionLinks();
+    const loggedIn = () => (
+      <div>
+      <h4>{currentMember.first_name}</h4>
+      <button onClick={logout}>Sign out</button>
+      </div>
+    );
+
+    return currentMember ? loggedIn() : sessionLinks();
+  }
 };
 
 export default NavBar;

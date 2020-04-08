@@ -7,9 +7,14 @@ import Home from './home/home';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Footer from './footer';
 
-const App = (props) => {
+class App extends React.Component {
   // now you can check out props to access route information.
-  const headerClass = () => {
+
+  componentWillUpdate() {
+    location.reload()
+  }
+  
+  headerClass() {
     if (location.hash=== "#/" ) {
       return "header"
     } else {
@@ -17,7 +22,7 @@ const App = (props) => {
     }
   };
 
-  const titleClass = () => {
+  titleClass() {
     if (location.hash === "#/") {
       return "title-white"
     } else {
@@ -25,7 +30,7 @@ const App = (props) => {
     }
   };
 
-  const navLinksClass = () => {
+  navLinksClass() {
     if (location.hash === "#/") {
       return "links-white"
     } else {
@@ -33,14 +38,15 @@ const App = (props) => {
     }
   };
 
-  return(
+  render () {
+    return (
     <>
-      <header className={headerClass()}>
+      <header className={this.headerClass()}>
         <nav className="nav-bar">
           <div className="left-nav">
-            <h1 className={titleClass()}><Link to="/">Pickle</Link></h1>
-            <Link className={navLinksClass()} to="/"><i className="far fa-question-circle"></i> Search Sitters</Link>
-            <Link className={navLinksClass()} to="/signup"><i className="far fa-heart"></i> Become a Sitter</Link>
+            <h1 className={this.titleClass()}><Link to="/">Pickle</Link></h1>
+            <Link className={this.navLinksClass()} to="/"><i className="far fa-question-circle"></i> Search Sitters</Link>
+            <Link className={this.navLinksClass()} to="/signup"><i className="far fa-heart"></i> Become a Sitter</Link>
           </div>
           <NavBarContainer />
         </nav>
@@ -54,7 +60,7 @@ const App = (props) => {
 
       <Footer />
     </>
-  )
-};
+  )};
+}
 
 export default App;
