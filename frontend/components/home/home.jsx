@@ -68,7 +68,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+      </div>
+      <div className="home-container-3">
         <div className="gpig-img">
           <div className="quote">
             <div className="quote-border" />
@@ -78,15 +79,37 @@ const Home = () => {
           </div>
           <div className="img-cred">Photo by <a href="https://unsplash.com/@moyathebunny">Chan Swan</a></div>
         </div>
-
+      </div>
+      <div className="home-container-4">
         <h3 className="home-h3">We're the treat-your-guinea-pig-like-family guinea pig people</h3>
         <div className="step-line-container">
           <ul className="step-line">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <li>
+              <i class="fas fa-clipboard-list container-4-icon"></i>
+              <h6 className="home-h6">Discover nearby, trusted sitters</h6>
+              <p>Get matched with one of our on-demand guinea-pig groomers, or browse 
+                for an overnight or day  care sitter
+              </p>
+            </li>
+            <li>
+              <i class="fas fa-mobile-alt container-4-icon"></i>
+              <h6 className="home-h6">Book &#x26; pay on Pickle</h6>
+              <p>Book and pay securely through the website or app</p>
+            </li>
+            <li>
+              <i class="far fa-grin-wink container-4-icon"></i>
+              <h6 className="home-h6">Relax</h6>
+              <p>Get the Pickle Guarantee, 24/7 support, and reservation protection</p>
+            </li>
           </ul>
         </div>
+      </div>
+      <div className="home-container-5">
+        <h3 className="home-h3">Coming to your App Store one day</h3>
+        <img className="phone-img" src={window.phoneUrl}/>
+      </div>
+      <div className="all-sitters">
+        
       </div>
     </>
   );

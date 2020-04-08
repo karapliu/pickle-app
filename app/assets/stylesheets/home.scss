@@ -8,12 +8,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: -1;
 }
 
 .home-div {
   color: white;
-  z-index: 2;
 }
 
 .home-div h1 {
@@ -53,7 +51,7 @@
 .home-container-2 {
   background-color: white;
   margin-top: 0px;
-  height: 1500px;
+  height: 680px;
 }
 
 .home-h3 {
@@ -87,8 +85,13 @@
   color: #14A96D;
 }
 
-.text h6 {
+.logo-text-container h6 {
   font-weight: bold;
+  color: #1B1F23;
+}
+
+.logo-text-container p {
+  color: #66727C;
 }
 
 .right {
@@ -136,6 +139,10 @@
   color: #14A96D;
 }
 
+.home-container-3 {
+  background-color: #FFFFFF;
+}
+
 .gpig-img {
   position: relative;
   margin: auto;
@@ -144,7 +151,6 @@
   background-repeat: no-repeat;
   width: 1100px;
   height: 550px;
-  z-index: 2;
   border: 1px solid blue;
 }
 
@@ -196,11 +202,18 @@
   color: #66727C;
 }
 
+.home-container-4 {
+  background-color: white;
+  height: 430px;
+}
+
+.step-line-container {
+  width: 1200px;
+  margin: 50px auto;
+}
+
 .step-line {
-  width: 1000px;
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
+  counter-reset: step;
 }
 
 .step-line li {
@@ -213,21 +226,26 @@
 .step-line li:before {
   width: 30px;
   height: 30px;
+  content: counter(step);
+  counter-increment: step;
   line-height: 30px;
-  border: 1px solid black;
+  border: 1px solid #cfd7de;
   display: block;
   text-align: center;
   margin: 0 auto 10px auto;
   border-radius: 50%;
   background-color: white;
+  font-size: 12px;
+  z-index: 10;
 }
 
 .step-line li:after {
   content: '';
   position: absolute;
+  display: inline-block;
   width: 100%;
   height: 1px;
-  background-color: black;
+  background-color: #cfd7de;
   top: 15px;
   left: -50%;
 }
@@ -235,3 +253,37 @@
 .step-line li:first-child:after {
   content: none;
 }
+
+.container-4-icon {
+  font-size: 70px;
+  margin-top: 30px;
+  color: #14A96D;
+}
+
+.step-line-container h6 {
+  font-weight: bold;
+  margin-top: 20px;
+  color: #1B1F23;
+}
+
+.step-line-container p {
+  color: #66727C;
+}
+
+.home-container-5 {
+  background-color: white;
+  height: 600px;
+}
+
+.phone-img {
+  width: 400px;
+  margin: auto;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.all-sitters {
+  background: #40484f;
+  color: #f4f5f6;
+  height: 400px;
+}
+
