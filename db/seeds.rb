@@ -7,5 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Member.destroy_all
+Service.destroy_all
+MembersService.destroy_all
 
 demo = Member.create!({first_name: "Demo", last_name: "Login", email: "demouser@demo.com", zipcode: 10001, password: "password!"})
+service = Service.create!({name: "Guinea Pig Boarding"})
+ms = MembersService.create!({price: 30, member_id: demo.id, service_id: service.id})

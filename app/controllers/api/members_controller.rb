@@ -1,4 +1,15 @@
 class Api::MembersController < ApplicationController
+  def show
+    @member = Member.find_by(id: params[:id])
+    @services = @member.services
+
+    if @member
+      render 'api/members/show'
+    else
+      render json: ["Member doesn't exist"], status: 422
+    end
+  end
+
   def create
     @member = Member.new(member_params)
 

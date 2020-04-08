@@ -1,1 +1,1 @@
-json.extract! member, :id, :first_name, :last_name, :email, :zipcode
+json.extract! member, :id, :first_name, :last_name, :email, :zipcode, :about_me, :hosting_max

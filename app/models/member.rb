@@ -8,7 +8,7 @@ class Member < ApplicationRecord
 
   attr_reader :password
 
-  belongs_to :ms,
+  has_many :ms,
     foreign_key: :member_id, 
     class_name: :MembersService
 

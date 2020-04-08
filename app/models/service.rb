@@ -1,7 +1,7 @@
 class Service < ApplicationRecord
-  validates :type, presence: true
+  validates :name, presence: true
 
-  belongs_to :ms,
+  has_many :ms,
     foreign_key: :service_id, 
     class_name: :MembersService
 

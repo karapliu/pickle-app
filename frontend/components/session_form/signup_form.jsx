@@ -49,7 +49,7 @@ class SignupForm extends React.Component {
           <label className="session-form-label">
             First name
             <input
-              type="email"
+              type="text"
               onChange={this.update('first_name')}
               value={this.state.first_name}
               className="session-form-input" />
@@ -76,7 +76,7 @@ class SignupForm extends React.Component {
           <label className="session-form-label">
             Email
             <input
-              type="text"
+              type="email"
               onChange={this.update('email')}
               value={this.state.email}
               className="session-form-input" />
