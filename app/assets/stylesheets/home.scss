@@ -1,4 +1,6 @@
 .home-container {
+  position: relative;
+  top: -50px;
   text-align: center;
   background-image: image-url("guinea-pig.jpg");
   background-repeat: no-repeat;
@@ -49,8 +51,8 @@
 }
 
 .home-container-2 {
+  margin-top: -50px;
   background-color: white;
-  margin-top: 0px;
   height: 680px;
 }
 
@@ -281,9 +283,40 @@
   border-bottom: 1px solid #DDDDDD;
 }
 
-.all-sitters {
+.all-sitters-container {
   background: #40484f;
   color: #f4f5f6;
-  height: 400px;
+  height: 600px;
 }
 
+.all-sitters-content {
+  padding: 45px 0px 0px 180px;
+  width: 900px;
+}
+
+.all-sitters-content h2 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.all-states {
+display: flex;
+height: 270px;
+margin-top: 20px;
+margin-bottom: 50px;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+.all-sitters-content p {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.countries {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 60px;
+  margin-top: 20px;
+}

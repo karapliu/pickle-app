@@ -2,11 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ currentMember, logout }) => {
+  const navLinksClass = () => {
+    if (location.hash === "#/") {
+      return "links-white"
+    } else {
+      return "nav-links"
+    }
+  };
+
   const sessionLinks = () => (
     <div className="session-links">
-      <Link className="nav-links" to="/signup">Sign Up</Link>
-      <Link className="nav-links" to="/signin">Sign In</Link>
-      <Link className="nav-links" to="/"><i className="far fa-question-circle"></i> Help</Link>
+      <Link className={navLinksClass()} to="/signup">Sign Up</Link>
+      <Link className={navLinksClass()} to="/signin">Sign In</Link>
+      <Link className={navLinksClass()} to="/"><i className="far fa-question-circle"></i> Help</Link>
     </div>
   );
 

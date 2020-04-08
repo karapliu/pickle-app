@@ -1,6 +1,21 @@
 .header {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #CFD7DE;
+  z-index: 10;
+  display: block;
+  position: relative;
+}
+
+.title-white a {
+  font-size: 35px;
+  text-decoration: none;
+  font-family: 'Paytone One', sans-serif;
+  color: white;
+  margin-right: 30px; 
+}
+
+.links-white {
+  text-decoration: none;
+  margin-right: 20px;
+  color: white;
 }
 
 .nav-bar {
@@ -13,9 +28,9 @@
   margin: 0 auto;
 }
 
-.home {
-  background-color: black;
-  border-bottom: none;
+.shown {
+  border-bottom: 1px solid #CFD7DE;
+  background-color: white;
 }
 
 .left-nav {
@@ -35,10 +50,10 @@
 .nav-links {
   text-decoration: none;
   margin-right: 20px;
-  color: #66727C
+  color: #66727C;
 }
 
 .nav-links:hover {
-  color: #033641
+  color: #033641;
 };
 

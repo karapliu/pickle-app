@@ -7,6 +7,8 @@
   border-radius: 5px;
   font-size: 14px;
   margin-top: 50px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #CFD7DD;
 }
 
 .session-form-container h1 {
