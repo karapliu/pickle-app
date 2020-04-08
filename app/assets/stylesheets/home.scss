@@ -53,10 +53,10 @@
 .home-container-2 {
   background-color: white;
   margin-top: 0px;
-  height: 1300px;
+  height: 1500px;
 }
 
-.home-container-2 h3 {
+.home-h3 {
   text-align: center;
   font-size: 25px;
   font-weight: 700;
@@ -148,10 +148,26 @@
   border: 1px solid blue;
 }
 
+.img-cred {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #16161680;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 23px;
+  right: 20px;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.img-cred a {
+  text-decoration: underlind;
+}
+
 .quote {
   position: absolute;
-  top: -40px;
-  left: 10%;
+  top: -60px;
+  left: 7%;
   width: 300px;
   height: 250px;
   background-color: white;
@@ -178,4 +194,44 @@
 
 .author {
   color: #66727C;
+}
+
+.step-line {
+  width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.step-line li {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  position: relative;
+}
+
+.step-line li:before {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.step-line li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  top: 15px;
+  left: -50%;
+}
+
+.step-line li:first-child:after {
+  content: none;
 }

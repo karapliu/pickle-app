@@ -15,7 +15,7 @@ const Home = () => {
         </div>
       </div>
       <div className="home-container-2">
-        <h3>Services for every guinea pig</h3>
+        <h3 className="home-h3">Services for every guinea pig</h3>
 
         <div className="two-box-container-2">
           <div className="left">
@@ -76,6 +76,16 @@ const Home = () => {
             he was her own. <span className="author">- Nancy M.</span>
             <div className="quote-bottom">We're The Guinea Pig People.</div>
           </div>
+          <div className="img-cred">Photo by <a href="https://unsplash.com/@moyathebunny">Chan Swan</a></div>
+        </div>
+
+        <h3 className="home-h3">We're the treat-your-guinea-pig-like-family guinea pig people</h3>
+        <div className="step-line-container">
+          <ul className="step-line">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
         </div>
       </div>
     </>
