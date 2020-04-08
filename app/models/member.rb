@@ -8,6 +8,14 @@ class Member < ApplicationRecord
 
   attr_reader :password
 
+  belongs_to :ms,
+    foreign_key: :member_id, 
+    class_name: :MembersService
+
+  has_many :services, 
+    through: :ms, 
+    source: :service
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64
   end
