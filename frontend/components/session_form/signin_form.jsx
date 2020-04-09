@@ -18,8 +18,8 @@ class SignInForm extends React.Component {
 
   demoLogin() {
     this.setState({
-      email: 'demouser@demo.com',
-      password: 'password!'
+      email: 'karaliu@email.com',
+      password: 'karapassword'
     });
 
     this.props.processForm(this.state);

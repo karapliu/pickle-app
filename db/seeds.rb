@@ -6,14 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Member.destroy_all
-Service.destroy_all
 MembersService.destroy_all
+Service.destroy_all
+Member.destroy_all
 
-demo = Member.create!({first_name: "Demo", last_name: "Login", email: "demouser@demo.com", zipcode: 10001, password: "password!", about_me: "I love gpigs!", hosting_max: 5})
-kara = Member.create!({first_name: "Kara", last_name: "Liu", email: "karaliu@gmail.com", zipcode: 10001, password: "wootwoot!", about_me: "Yay!", hosting_max: 4})
-service = Service.create!({name: "Guinea Pig Boarding"})
-service_2 = Service.create!({name: "Guinea Pig Grooming"})
-ms = MembersService.create!({price: 30, member_id: demo.id, service_id: service.id})
-ms2 = MembersService.create!({price: 20, member_id: kara.id, service_id: service_2.id})
-ms3 = MembersService.create!({price: 10, member_id: kara.id, service_id: service.id})
+# MEMBERS 
+kara = Member.create!({first_name: "Kara", last_name: "Liu", email: "karaliu@email.com", zipcode: 10001, password: "karapassword", about_me: "I love guinea pigs!", hosting_max: 5})
+kendrick = Member.create!({first_name: "Kendrick", last_name: "Lamar", email: "kendricklamar@email.com", zipcode: 10010, password: "kendrickpassword", about_me: "Guinea pigs 4 life!", hosting_max: 3})
+asap = Member.create!({first_name: "A$AP", last_name: "Rocky", email: "asaprocky@email.com", zipcode: 10012, password: "asappassword", about_me: "I own five guinea pigs!", hosting_max: 10})
+
+# SERVICES 
+boarding = Service.create!({name: "Guinea Pig Boarding"})
+day_care = Service.create!({name: "Guinea Pig Day Care"})
+grooming = Service.create!({name: "Guinea Pig Grooming"})
+
+# MEMBERS SERVICES
+kara_boarding = MembersService.create!({price: 80, member_id: kara.id, service_id: boarding.id})
+kara_day_care = MembersService.create!({price: 50, member_id: kara.id, service_id: day_care.id})
+kara_grooming = MembersService.create!({price: 20, member_id: kara.id, service_id: grooming.id})
+kendrick_boarding = MembersService.create!({price: 75, member_id: kendrick.id, service_id: boarding.id})
+kendrick_day_care = MembersService.create!({price: 20, member_id: kendrick.id, service_id: day_care.id})
+kendrick_grooming = MembersService.create!({price: 30, member_id: kendrick.id, service_id: grooming.id})
+asap_boarding = MembersService.create!({price: 150, member_id: asap.id, service_id: boarding.id})
+asap_day_care = MembersService.create!({price: 90, member_id: asap.id, service_id: day_care.id})
+asap_grooming = MembersService.create!({price: 70, member_id: asap.id, service_id: grooming.id})
