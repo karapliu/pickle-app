@@ -52,8 +52,8 @@ class SignInForm extends React.Component {
     return (
       <div className="session-form-container">
         <h1>Sign In to Pickle</h1>
-        {this.renderErrors()}
         <form className="session-form" onSubmit={this.handleSubmit}>
+          {this.renderErrors()}
           <label className="session-form-label">
             Email
             <input

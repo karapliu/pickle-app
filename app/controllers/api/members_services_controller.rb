@@ -1,6 +1,7 @@
-class MembersServicesController < ApplicationController
+class Api::MembersServicesController < ApplicationController
   def index
-    @services = MembersService.where(member_id: params[:member_id])
+    @services = Service.all
+    @member = Member.find(params[:member_id])
     
     render 'api/members_services/index'
   end

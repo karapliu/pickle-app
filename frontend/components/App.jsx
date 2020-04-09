@@ -4,6 +4,7 @@ import SignUpFormContainer from '../components/session_form/signup_form_containe
 import SignInFormContainer from './session_form/signin_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Home from './home/home';
+import ProfileContainer from './profile/profile_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Footer from './footer';
 
@@ -52,11 +53,10 @@ class App extends React.Component {
         </nav>
       </header>
       
-      <Switch>
-        <Route exact path="/" component={Home} />
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <AuthRoute exact path="/signin" component={SignInFormContainer} />
-      </Switch>
+        <Route path="/members/:memberId" component={ProfileContainer} />
+        <Route exact path="/" component={Home} />
 
       <Footer />
     </>

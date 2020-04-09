@@ -16,6 +16,8 @@ class Member < ApplicationRecord
     through: :ms, 
     source: :service
 
+  has_one_attached :profile_pic
+
   def self.generate_session_token
     SecureRandom::urlsafe_base64
   end

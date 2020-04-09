@@ -2,7 +2,7 @@ class Api::MembersController < ApplicationController
   def show
     @member = Member.find_by(id: params[:id])
     @services = @member.services
-
+    
     if @member
       render 'api/members/show'
     else

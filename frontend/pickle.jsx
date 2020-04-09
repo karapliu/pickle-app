@@ -5,6 +5,7 @@ import Root from './components/root';
 
 // TESTING
 import { signup, login, logout } from './util/session_api_util';
+import { fetchMember } from './actions/member_actions';
 // TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = logout;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchMember = fetchMember;
   // TESTING
 
   ReactDOM.render(<Root store={store} />, root);

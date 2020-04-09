@@ -10,6 +10,10 @@ Member.destroy_all
 Service.destroy_all
 MembersService.destroy_all
 
-demo = Member.create!({first_name: "Demo", last_name: "Login", email: "demouser@demo.com", zipcode: 10001, password: "password!"})
+demo = Member.create!({first_name: "Demo", last_name: "Login", email: "demouser@demo.com", zipcode: 10001, password: "password!", about_me: "I love gpigs!", hosting_max: 5})
+kara = Member.create!({first_name: "Kara", last_name: "Liu", email: "karaliu@gmail.com", zipcode: 10001, password: "wootwoot!", about_me: "Yay!", hosting_max: 4})
 service = Service.create!({name: "Guinea Pig Boarding"})
+service_2 = Service.create!({name: "Guinea Pig Grooming"})
 ms = MembersService.create!({price: 30, member_id: demo.id, service_id: service.id})
+ms2 = MembersService.create!({price: 20, member_id: kara.id, service_id: service_2.id})
+ms3 = MembersService.create!({price: 10, member_id: kara.id, service_id: service.id})
