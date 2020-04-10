@@ -7,7 +7,7 @@ const Home = () => {
       <div className="home-container">
         <div className="home-div">
           <h1>Local, loving Guinea Pig Care</h1>
-          <h2>Book trusted sitters who'll treat your guinea pigs like family!</h2>
+          <h2>Book trusted sitters who'll treat your <br />guinea pigs like family!</h2>
           <div className="two-box-container">
             <div className="form"></div>
             <div className="other-form"></div>

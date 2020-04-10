@@ -4,12 +4,13 @@
   position: relative;
 }
 
-.title-white a {
-  font-size: 35px;
-  text-decoration: none;
-  font-family: 'Paytone One', sans-serif;
-  color: white;
-  margin-right: 30px; 
+.main-logo {
+  margin-right: 30px;
+}
+
+.main-logo img {
+  height: 35px;
+  width: auto;
 }
 
 .links-white {
@@ -43,7 +44,7 @@
   font-size: 35px;
   text-decoration: none;
   font-family: 'Paytone One', sans-serif;
-  color: #14A96D;
+  color: #83A05C;
   margin-right: 30px; 
 }
 

@@ -25,9 +25,9 @@ class App extends React.Component {
 
   titleClass() {
     if (location.hash === "#/") {
-      return "title-white"
+      return window.pickle2
     } else {
-      return "title"
+      return window.pickle1
     }
   };
 
@@ -45,7 +45,7 @@ class App extends React.Component {
       <header className={this.headerClass()}>
         <nav className="nav-bar">
           <div className="left-nav">
-            <h1 className={this.titleClass()}><Link to="/">Pickle</Link></h1>
+            <div className="main-logo"><Link to="/"><img src={this.titleClass()} /></Link></div>
             <Link className={this.navLinksClass()} to="/"><i className="far fa-question-circle"></i> Search Sitters</Link>
             <Link className={this.navLinksClass()} to="/signup"><i className="far fa-heart"></i> Become a Sitter</Link>
           </div>

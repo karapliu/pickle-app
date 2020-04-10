@@ -58,8 +58,8 @@
   display: block;
   width: 100%;
   height: 45px;
-  background-color: #14A96D;
-  border: #14A96D;
+  background-color: #83A05C;
+  border: #265936;
   color: #FFFFFF;
   font-size: 15px;
   border-radius: 5px;
@@ -69,7 +69,7 @@
 
 .session-form-submit:hover {
   cursor: pointer;
-  background-color: #11925E;
+  background-color: #265936;
 }
 
 .session-form-submit:active {
