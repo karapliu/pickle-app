@@ -44,7 +44,7 @@ class Profile extends React.Component {
             <div className="prof-left">
               <div className="prof-services">
                 <h2 className="prof-h2">Services</h2>
-                  {/* {allServices} */}
+                  
               </div>
             </div>
             <div className="prof-middle"></div>
