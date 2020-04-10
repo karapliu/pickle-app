@@ -15,14 +15,14 @@ class Profile extends React.Component {
 
     const lastInitial = this.props.member.last_name.slice(0, 1)
     
-    const allServices = member.service_ids.map(service_id => {
-      const serv = typeof services[0] == undefined ? services[0][service_id] : null ;
-      if (serv) {
-        return <li key={service_id}>{serv.name}</li>
-      } else {
-        return "";
-      }
-    })
+    // const allServices = member.service_ids.map(service_id => {
+    //   const serv = typeof services[0] == undefined ? services[0][service_id] : null ;
+    //   if (serv) {
+    //     return <li key={service_id}>{serv.name}</li>
+    //   } else {
+    //     return "";
+    //   }
+    // })
   
 
     return (
@@ -44,7 +44,7 @@ class Profile extends React.Component {
             <div className="prof-left">
               <div className="prof-services">
                 <h2 className="prof-h2">Services</h2>
-                  {allServices}
+                  {/* {allServices} */}
               </div>
             </div>
             <div className="prof-middle"></div>
