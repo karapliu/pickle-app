@@ -53,6 +53,7 @@
 
 .prof-left {
   width: 345px;
+  padding-bottom: 45px;
 }
 
 .prof-services {
@@ -80,12 +81,12 @@
 
 .prof-middle {
   border: 1px solid blue;
-  width: 300px;
+  width: 540px;
 }
 
 .prof-right {
   border: 1px solid blue;
-  width: 200px;
+  width: 140px;
 }
 
 .prof-h2 {
@@ -102,6 +103,11 @@
   margin-top: 45px;
 }
 
+.hosting-pref p {
+  text-align: center;
+  margin-top: 15px;
+}
+
 .hosting-pref img {
   width: 70px;
 }
@@ -114,4 +120,15 @@
 
 .availability {
   margin-top: 45px;
+}
+
+.calendar {
+  margin-top: 20px;
+  height: 300px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+}
+
+.about_me p {
+  font-size: 11px;
 }

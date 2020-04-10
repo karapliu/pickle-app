@@ -43,7 +43,7 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <h1>Sign Up for Pickle</h1>
+        <h1>Sign Up for Pickle </h1>
         {this.renderErrors()}
         <form className="session-form" onSubmit={this.handleSubmit}>
           <label className="session-form-label">

@@ -34,7 +34,7 @@ const Home = () => {
               </div>
             </div>
             <div className="logo-text-container">
-              <div className="logo"><i className="fas fa-paw"></i></div>
+              <div className="paw"><img src={window.paw} /></div>
               <div className="text">
                 <h6>Guinea Pig Grooming</h6>
                 <p>Whenever your guinea pig needs a pamper.</p>

@@ -54,16 +54,23 @@ class Profile extends React.Component {
 
               <div className="hosting-pref">
                 <h3 className="prof-h3">Hosting Max</h3>
-                <div className="hosting-pigs">
-                  <HostingPigs max={member.hosting_max} />
-                </div>
+                <HostingPigs max={member.hosting_max} />
+                <p>{member.first_name} can host {member.hosting_max} guinea pigs at a time!</p>
               </div>
 
               <div className="availability">
                 <h3 className="prof-h3">Availability</h3>
+                <div className="calendar">
+
+                </div>
               </div>
             </div>
-            <div className="prof-middle"></div>
+            <div className="prof-middle">
+              <div className="about-me">
+                <h3 className="prof-h3">About {member.first_name}</h3>
+                <p>{member.about_me}</p>
+              </div>
+            </div>
             <div className="prof-right"></div>
           </div>
         </div>
