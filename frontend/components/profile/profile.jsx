@@ -30,6 +30,7 @@ class Profile extends React.Component {
         <div className="profile-container">
           <div className="profile-header">
             <div className="profile-photo">
+              <img src={member.photoUrl} />
             </div>
 
             <div className="profile-header-info">
