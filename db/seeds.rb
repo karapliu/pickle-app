@@ -11,9 +11,9 @@ Service.destroy_all
 Member.destroy_all
 
 # MEMBERS 
-kara = Member.create!({first_name: "Kara", last_name: "Liu", email: "karaliu@email.com", zipcode: 10001, password: "karapassword", about_me: "I love guinea pigs!", hosting_max: 5})
+kara = Member.create!({first_name: "Kara", last_name: "Liu", email: "karaliu@email.com", zipcode: 10001, password: "karapassword", about_me: "I love guinea pigs!", hosting_max: 4})
 kendrick = Member.create!({first_name: "Kendrick", last_name: "Lamar", email: "kendricklamar@email.com", zipcode: 10010, password: "kendrickpassword", about_me: "Guinea pigs 4 life!", hosting_max: 3})
-asap = Member.create!({first_name: "A$AP", last_name: "Rocky", email: "asaprocky@email.com", zipcode: 10012, password: "asappassword", about_me: "I own five guinea pigs!", hosting_max: 10})
+asap = Member.create!({first_name: "A$AP", last_name: "Rocky", email: "asaprocky@email.com", zipcode: 10012, password: "asappassword", about_me: "I own five guinea pigs!", hosting_max: 5})
 
 # SERVICES 
 boarding = Service.create!({name: "Guinea Pig Boarding"})

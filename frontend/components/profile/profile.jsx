@@ -1,4 +1,5 @@
 import React from 'react';
+import HostingPigs from './hosting-pigs';
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -7,7 +8,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { member, services } = this.props;
+    const { member } = this.props;
 
     if (!member) {
       return null;
@@ -15,14 +16,18 @@ class Profile extends React.Component {
 
     const lastInitial = this.props.member.last_name.slice(0, 1)
     
-    // const allServices = member.service_ids.map(service_id => {
-    //   const serv = typeof services[0] == undefined ? services[0][service_id] : null ;
-    //   if (serv) {
-    //     return <li key={service_id}>{serv.name}</li>
-    //   } else {
-    //     return "";
-    //   }
-    // })
+    const allServices = member.service_ids.map(service_id => {
+      // const serv = typeof services[0] == undefined ? services[0][service_id] : null ;
+      const serv = member.services[service_id];
+      if (serv) {
+        return <li className="service-li" key={service_id}>
+          <h6 className="li-h6">{serv.name}</h6> 
+          <p className="li-price">${serv.price}</p>
+        </li>
+      } else {
+        return "";
+      }
+    })
   
 
     return (
@@ -44,7 +49,18 @@ class Profile extends React.Component {
             <div className="prof-left">
               <div className="prof-services">
                 <h2 className="prof-h2">Services</h2>
-                  
+                  {allServices}
+              </div>
+
+              <div className="hosting-pref">
+                <h3 className="prof-h3">Hosting Max</h3>
+                <div className="hosting-pigs">
+                  <HostingPigs max={member.hosting_max} />
+                </div>
+              </div>
+
+              <div className="availability">
+                <h3 className="prof-h3">Availability</h3>
               </div>
             </div>
             <div className="prof-middle"></div>

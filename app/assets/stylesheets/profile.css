@@ -14,9 +14,9 @@
 .profile-photo {
   width: 230px;
   height: 230px;
-  border: 1px solid black;
   border-radius: 50%;
   margin: 40px;
+  overflow: hidden;
 }
 
 .profile-header-info {
@@ -59,7 +59,23 @@
   padding: 30px 20px 20px 20px;
   background-color: #F4F5F6;
   border-radius: 7px;
-  margin-bottom: 30px;
+}
+
+.service-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: middle;
+  list-style-type: none;
+  margin-top: 30px;
+}
+
+.li-h6 {
+  font-weight: 900;
+}
+
+.li-price {
+  font-size: 33px;
+  margin-top: -10px;
 }
 
 .prof-middle {
@@ -75,4 +91,27 @@
 .prof-h2 {
   font-size: 32px;
   font-weight: 900;
+}
+
+.prof-h3 {
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.hosting-pref {
+  margin-top: 45px;
+}
+
+.hosting-pref img {
+  width: 70px;
+}
+
+.hosting-pigs {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.availability {
+  margin-top: 45px;
 }

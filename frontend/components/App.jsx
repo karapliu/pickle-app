@@ -46,7 +46,7 @@ class App extends React.Component {
         <nav className="nav-bar">
           <div className="left-nav">
             <div className="main-logo"><Link to="/"><img src={this.titleClass()} /></Link></div>
-            <Link className={this.navLinksClass()} to="/"><i className="far fa-question-circle"></i> Search Sitters</Link>
+              <Link className={this.navLinksClass()} to="/"><i className="fas fa-search"></i> Search Sitters</Link>
             <Link className={this.navLinksClass()} to="/signup"><i className="far fa-heart"></i> Become a Sitter</Link>
           </div>
           <NavBarContainer />
