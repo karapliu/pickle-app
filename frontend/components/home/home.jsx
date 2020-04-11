@@ -106,74 +106,8 @@ const Home = () => {
       </div>
       <div className="home-container-5">
         <h3 className="home-h3">Coming to your App Store one day</h3>
-        <img className="phone-img" src={window.phoneUrl}/>
-      </div>
-      <div className="all-sitters-container">
-        <div className="all-sitters-content">
-          <h2>Thousands of pet sitters across the United States&nbsp;&nbsp;&nbsp;<i className="fas fa-flag-usa"></i></h2>
-          <div className="all-states">
-            <p>Alabama</p>
-            <p>Alaska</p>
-            <p>Arizona</p>
-            <p>Arkansas</p>
-            <p>California</p>
-            <p>Colorado</p>
-            <p>Connecticut</p>
-            <p>Delaware</p>
-            <p>District of Columbia</p>
-            <p>Florida</p>
-            <p>Georgia</p>
-            <p>Hawaii</p>
-            <p>Idaho</p>
-            <p>Illinois</p>
-            <p>Iowa</p>
-            <p>Kansas</p>
-            <p>Kentucky</p>
-            <p>Louisiana</p>
-            <p>Maine</p>
-            <p>Maryland</p>
-            <p>Massachusetts</p>
-            <p>Michigan</p>
-            <p>Minnesota</p>
-            <p>Mississippi</p>
-            <p>Missouri</p>
-            <p>Montana</p>
-            <p>Nebraska</p>
-            <p>Nevada</p>
-            <p>New Hampshire</p>
-            <p>New Jersey</p>
-            <p>New Mexico</p>
-            <p>New York</p>
-            <p>North Carolina</p>
-            <p>North Dakota</p>
-            <p>Ohio</p>
-            <p>Oklahoma</p>
-            <p>Oregon</p>
-            <p>Pennsylvania</p>
-            <p>Rhode Island</p>
-            <p>South Carolina</p>
-            <p>South Dakota</p>
-            <p>Tennessee</p>
-            <p>Texas</p>
-            <p>Utah</p>
-            <p>Vermont</p>
-            <p>Virginia</p>
-            <p>Washington</p>
-            <p>West Virgina</p>
-            <p>Wisconsin</p>
-            <p>Wyoming</p>
-          </div>
-          <h2>Trusted around the world&nbsp;&nbsp;&nbsp;<i className="fas fa-globe"></i></h2>
-          <div className="countries">
-            <p>Canada</p>
-            <p>United Kingdom</p>
-            <p>Germany</p>
-            <p>Netherlands</p>
-            <p>Spain</p>
-            <p>Norway</p>
-            <p>France</p>
-            <p>Sweden</p>
-          </div>
+        <div className="phone">
+          <img className="phone-img" src={window.phoneUrl}/>
         </div>
       </div>
     </>

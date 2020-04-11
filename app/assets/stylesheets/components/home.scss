@@ -60,7 +60,7 @@
   font-size: 25px;
   font-weight: 700;
   padding-top: 80px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .two-box-container-2 {
@@ -281,46 +281,15 @@
   height: 600px;
 }
 
+.phone {
+  width: 750px;
+  border-bottom: 1px solid #DDDDDD;
+  margin: auto;
+}
+
 .phone-img {
   width: 400px;
   margin: auto;
-  border-bottom: 1px solid #DDDDDD;
 }
 
-.all-sitters-container {
-  background: #40484f;
-  color: #f4f5f6;
-  height: 600px;
-}
 
-.all-sitters-content {
-  padding: 45px 0px 0px 180px;
-  width: 900px;
-}
-
-.all-sitters-content h2 {
-  font-size: 25px;
-  font-weight: 700;
-}
-
-.all-states {
-  display: flex;
-  height: 270px;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-
-.all-sitters-content p {
-  font-size: 14px;
-  padding-bottom: 5px;
-}
-
-.countries {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 60px;
-  margin-top: 20px;
-}

@@ -1,5 +1,5 @@
 .pickle-footer {
-  height: 270px;
+  height: 250px;
   background-color: #F4F5F6;
   padding-top: 35px;
 }
@@ -12,10 +12,22 @@
 }
 
 .footer-left {
+  display: flex;
+  flex-direction: column;
   width: 600px;
+}
+
+.footer-left a {
+  color: #66727C;
+  font-size: 15px;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
 }
 
 .footer-h3 {
   font-size: 20px;
   font-weight: 600;
+  margin-bottom: 10px;
 }

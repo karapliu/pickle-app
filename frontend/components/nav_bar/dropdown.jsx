@@ -20,11 +20,9 @@ class Dropdown extends React.Component {
   }
 
   closeMenu(e) {
-    if (!this.dropdownMenu.contains(e.target)) {
-      this.setState({ showMenu: false }, () => {
-        document.removeEventListener('click', this.closeMenu)
-      });
-    }
+    this.setState({ showMenu: false }, () => {
+      document.removeEventListener('click', this.closeMenu)
+    });
   }
 
   render() {
