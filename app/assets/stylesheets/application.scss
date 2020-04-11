@@ -14,7 +14,9 @@
  *= require_self
  */
 
- body {
-   font-family: Averta-Regular, Avenir, Helvetica Neue, Calibri, Helvetica, Roboto, sans-serif;
-   background-color: #E8EBED;
- }
+ @import "base/reset.scss";
+
+ @import "base/colors.scss";
+ @import "base/layout.scss";
+
+ @import "components/*";

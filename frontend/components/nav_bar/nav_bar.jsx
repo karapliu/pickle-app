@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Dropdown from './dropdown';
 
 class NavBar extends React.Component {
   navLinksClass() {
@@ -22,10 +23,11 @@ class NavBar extends React.Component {
     );
 
     const loggedIn = () => (
-      <div>
-      <h4>{currentMember.first_name}</h4>
-      <button onClick={logout}>Sign out</button>
-      </div>
+      <>
+        <div className="logged-in-links">
+          <Dropdown logout={logout} currentMember={currentMember} navLinksClass={this.navLinksClass} />
+        </div>
+      </>
     );
 
     return currentMember ? loggedIn() : sessionLinks();

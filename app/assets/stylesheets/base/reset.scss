@@ -1,9 +1,6 @@
-/* PHASE 0: Reset */
-
-html, body, header, nav, h1, h3, h6, h4, a,
-ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
-fieldset, label, input, textarea,
+html, body, header, nav, h1, h2, h3, h4, h5, h6, a,
+ul, li, strong, main, button, i, section, img, div, 
+p, form, fieldset, label, input, textarea,
 span, article, footer, time, small {
   margin: 0;
   padding: 0;
@@ -34,10 +31,6 @@ input[type="text"],
 input[type="submit"],
 textarea,
 button {
-  /*
-  Get rid of native styling. Read more here:
-  http://css-tricks.com/almanac/properties/a/appearance/
-  */
   -webkit-appearance: none;
   -moz-appearance: none;
 }
