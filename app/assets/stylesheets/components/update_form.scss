@@ -1,0 +1,168 @@
+.update-form-header {
+  height: 67px;
+  background-color: #EEEEEE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-form-header a {
+  padding: 20px;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+.active {
+  border-bottom: 3px solid #265936;
+}
+
+.update-form-content-container {
+  background-color: white;
+  height: 750px;
+}
+
+.update-h3 {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  padding-top: 45px;
+  margin-bottom: 20px;
+}
+
+.update-form-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 610px;
+}
+
+.update-form-content h6 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1B1F23;
+}
+
+.update-form-name-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1B1F23;
+  width: 100%;
+}
+
+.update-form-name-label:first-child {
+  padding-right: 30px;
+}
+
+.update-form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1B1F23;
+}
+
+.update-form-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-form-input {
+  font-weight: normal;
+  display: block;
+  width: 100%;
+  height: 33px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 3px 3px 3px 5px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  font-size: inherit;
+}
+
+
+.update-form-input:focus {
+  outline: none;
+  border: 1px solid #06748A;
+}
+
+.update-form-last {
+  display: flex;
+  flex-direction: column;
+}
+
+.update-form-input-zip {
+  font-weight: normal;
+  width: 290px;
+  height: 33px;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 3px 3px 3px 5px;
+  margin-top: 2px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.update-form-input-zip:focus {
+  outline: none;
+  border: 1px solid #06748A;
+}
+
+.photo-upload-container {
+  display: flex;
+  margin-top: 15px;
+}
+
+.update-form-content p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #66727C;
+  padding-bottom: 20px;
+}
+
+.photo-upload-left {
+  width: 70%;
+}
+
+.photo-upload-right {
+  width: 29%;
+  padding: 20px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload-button {
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.upload-button:hover {
+  background-color: #F2F2F2;
+}
+
+.update-form-submit {
+  padding: 10px 15px;
+  background-color: #6D8F54;
+  border-radius: 4px;
+  font-size: 14px;
+  color: white;
+  margin: 30px auto;
+}
+
+.update-form-submit:hover {
+  background-color: #265936;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+}

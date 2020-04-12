@@ -21,6 +21,16 @@ class Api::MembersController < ApplicationController
     end
   end
 
+  def update
+    @member = Member.find(params[:id])
+
+    if @member.update_attributes(member_params)
+      render 'api/members/show'
+    else
+      render json: @member.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def member_params

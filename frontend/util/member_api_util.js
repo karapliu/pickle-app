@@ -4,3 +4,11 @@ export const fetchMember = memberId => (
     url: `api/members/${memberId}`
   })
 );
+
+export const updateMember = member => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/members/${member.id}`,
+    data: { member }
+  })
+);

@@ -12,3 +12,8 @@ export const fetchMember = memberId => dispatch => (
     .then(member => dispatch(receiveMember(member)))
 );
 
+export const updateMember = member => dispatch => (
+  MemberAPIUtil.updateMember(member)
+    .then(member => dispatch(receiveMember(member)))
+);
+

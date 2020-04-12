@@ -7,6 +7,7 @@ import Home from './home/home';
 import ProfileContainer from './profile/profile_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Footer from './footer';
+import UpdateProfileFormContainer from './update_profile_form/update_profile_form_container';
 
 class App extends React.Component {
   // now you can check out props to access route information.
@@ -52,11 +53,14 @@ class App extends React.Component {
           <NavBarContainer />
         </nav>
       </header>
-      
+
+      <Switch>
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <AuthRoute exact path="/signin" component={SignInFormContainer} />
-        <Route path="/members/:memberId" component={ProfileContainer} />
+        <Route exact path="/members/:memberId" component={ProfileContainer} />
+        <ProtectedRoute path="/account/profile/account-info" component={UpdateProfileFormContainer} />
         <Route exact path="/" component={Home} />
+      </Switch> 
 
       <Footer />
     </>
