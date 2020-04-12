@@ -44,7 +44,7 @@ class Dropdown extends React.Component {
             </div>
             <div className="dropdown-right">
               <div className="dropdown-links">
-                <Link to="/">Dashboard</Link>
+                <Link to="/account">Dashboard</Link>
                 <Link to={`/members/${currentMember.id}`}>Profile</Link>
               </div>
               <button onClick={logout}>Log out</button>
