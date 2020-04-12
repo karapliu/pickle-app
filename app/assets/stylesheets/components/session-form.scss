@@ -15,7 +15,7 @@
   text-align: center;
   font-weight: 900;
   font-size: 35px;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 
 .session-form-container p {
@@ -86,4 +86,15 @@
   background-color: #F2DEDE;
   border: 1px solid #ebccd1;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.err-exit {
+  font-size: 17px;
+  line-height: 1;
+  font-weight: 700;
+  color: #000000;
+  opacity: .3;
 }

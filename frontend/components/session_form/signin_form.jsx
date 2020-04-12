@@ -51,7 +51,7 @@ class SignInForm extends React.Component {
 
     if (errors.length > 0) {
       return (
-        <ul className='signin-errors'>{errorsLis}</ul>
+        <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} class="err-exit">x</button></ul>
       )
     }
   }
