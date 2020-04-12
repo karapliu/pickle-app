@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
-import SignUpFormContainer from '../components/session_form/signup_form_container';
+import SignUpFormContainer from './session_form/signup_form_container';
 import SignInFormContainer from './session_form/signin_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Home from './home/home';

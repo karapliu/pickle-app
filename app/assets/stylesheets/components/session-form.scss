@@ -77,5 +77,13 @@
 }
 
 .form-errors {
-  color: red;
+  color: #e5281a;
+}
+
+.signin-errors {
+  color: #e5281a;
+  padding: 15px;
+  background-color: #F2DEDE;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
 }
