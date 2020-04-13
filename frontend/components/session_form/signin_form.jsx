@@ -28,15 +28,15 @@ class SignInForm extends React.Component {
       }
     });
 
-    this.props.processForm(this.state);
-    <Redirect to="/" />
+    this.props.processForm(this.state)
+      .then(() => this.props.history.push('/'))
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const member = Object.assign({}, this.state.member);
-    this.props.processForm(member);
-    <Redirect to="/" />
+    this.props.processForm(member)
+      .then(() => this.props.history.push('/'))
   }
 
   update(field) {

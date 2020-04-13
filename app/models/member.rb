@@ -17,6 +17,7 @@ class Member < ApplicationRecord
     source: :service
 
   has_one_attached :profile_pic
+  has_many_attached :photos
 
   def self.generate_session_token
     SecureRandom::urlsafe_base64

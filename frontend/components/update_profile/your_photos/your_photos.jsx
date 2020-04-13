@@ -1,12 +1,13 @@
 import React from 'react';
 import UpdateHeader from '../update_header/update_header';
 
-class YourPhoto extends React.Component {
+class YourPhotos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      photos: null
     };
 
     this.handleFile = this.handleFile.bind(this);
@@ -39,7 +40,7 @@ class YourPhoto extends React.Component {
       data: formData,
       contentType: false,
       processData: false
-    });
+    }).then(() => this.props.history.push('/account/profile/services'));
   }
 
   render () {
@@ -71,6 +72,12 @@ class YourPhoto extends React.Component {
                   <img src={this.state.photoUrl ? "" : this.props.currentMember.photoUrl} />
                 </div>
               </div>
+
+              {/* <input
+                type="file"
+                onChange={e => this.setState({ photos: e.target.files })}
+                multiple
+              /> */}
               <button className="update-form-submit" type="submit">Save &#38; Continue</button>
 
             </form>
@@ -81,4 +88,4 @@ class YourPhoto extends React.Component {
   }
 }
 
-export default YourPhoto;
+export default YourPhotos;

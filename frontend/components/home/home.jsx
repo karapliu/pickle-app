@@ -3,73 +3,74 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <>
-      <div className="home-container">
-        <div className="home-div">
+    <div className="home">
+      <div className="home-main-img flex-row jus-center align-center">
+        <div className="flex-column">
           <h1>Local, loving Guinea Pig Care</h1>
           <h2>Book trusted sitters who'll treat your <br />guinea pigs like family!</h2>
-          <div className="two-box-container">
-            <div className="form"></div>
-            <div className="other-form"></div>
+          <div className="flex-row jus-center">
+            <div className="home-search-form"></div>
+            <div className="home-search-form-2"></div>
           </div>
         </div>
       </div>
-      <div className="home-container-2">
-        <h3 className="home-h3">Services for every guinea pig</h3>
 
-        <div className="two-box-container-2">
-          <div className="left">
-            <div className="logo-text-container">
-              <div className="logo"><i className="fas fa-suitcase"></i></div>
-              <div className="text">
+      <div className="home-container-services white-bg">
+        <h3>Services for every guinea pig</h3>
+
+        <div className="flex-row jus-center">
+          <div className="services-left">
+            <div className="logo-text-container flex-row align-center">
+              <div className="home-serv-logo"><i className="fas fa-suitcase"></i></div>
+              <div>
                 <h6>Guinea Pig Boarding</h6>
-                <p>Perfect if you need overnight pet care.</p>
+                <p className="grey">Perfect if you need overnight pet care.</p>
               </div>
             </div>
-            <div className="logo-text-container">
-              <div className="logo"><i className="fas fa-home"></i></div>
-              <div className="text">
+            <div className="logo-text-container flex-row align-center">
+              <div className="home-serv-logo"><i className="fas fa-home"></i></div>
+              <div>
                 <h6>House Sitting</h6>
-                <p>Great if you need overnight pet or house-sitting services.</p>
+                <p className="grey">Great if you need overnight pet or house-sitting services.</p>
               </div>
             </div>
-            <div className="logo-text-container">
+            <div className="logo-text-container flex-row align-center">
               <div className="paw"><img src={window.paw} /></div>
-              <div className="text">
+              <div>
                 <h6>Guinea Pig Grooming</h6>
-                <p>Whenever your guinea pig needs a pamper.</p>
+                <p className="grey">Whenever your guinea pig needs a pamper.</p>
               </div>
             </div>
-            <div className="logo-text-container">
-              <div className="logo"><i className="fas fa-sun"></i></div>
-              <div className="text">
+            <div className="logo-text-container flex-row align-center">
+              <div className="home-serv-logo"><i className="fas fa-sun"></i></div>
+              <div>
                 <h6>Guinea Pig Day Care</h6>
-                <p>Daytime pet care in your sitter's guinea pig friendly home.</p>
+                <p className="grey">Daytime pet care in your sitter's guinea pig friendly home.</p>
               </div>
             </div>
-            <div className="logo-text-container">
-              <div className="logo"><i className="fas fa-carrot"></i></div>
-              <div className="text">
+            <div className="logo-text-container flex-row align-center">
+              <div className="home-serv-logo"><i className="fas fa-carrot"></i></div>
+              <div>
                 <h6>Drop-in Visits</h6>
-                <p>For check-ins and play dates.</p>
+                <p className="grey">For check-ins and play dates.</p>
               </div>
             </div>
           </div>
-          <div className="right">
-            <div className="right-top">
+          <div className="services-right">
+            <div className="services-right-top flex-row jus-center align-center">
               <i className="fas fa-ribbon right-top-logo"></i>
               <h4>Book with pet sitters that you can trust</h4>
             </div>
-            <div className="right-bottom">
-              <p><i className="fas fa-check check"></i> All new sitters pass a basic background check</p>
-              <p><i className="fas fa-check check"></i> All sitters provide a detailed profile and personal information</p>
-              <p><i className="fas fa-check check"></i> All sitters are approved by our team of sitter specialists</p>
+            <div className="services-right-bottom">
+              <p><i className="fas fa-check med-green"></i> All new sitters pass a basic background check</p>
+              <p><i className="fas fa-check med-green"></i> All sitters provide a detailed profile and personal information</p>
+              <p><i className="fas fa-check med-green"></i> All sitters are approved by our team of sitter specialists</p>
               <Link to="/signup"><button>Book your next Pickle sitter</button></Link>
             </div>
           </div>
         </div>
       </div>
-      <div className="home-container-3">
+      <div className="white-bg">
         <div className="gpig-img">
           <div className="quote">
             <div className="quote-border" />
@@ -110,7 +111,7 @@ const Home = () => {
           <img className="phone-img" src={window.phoneUrl}/>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

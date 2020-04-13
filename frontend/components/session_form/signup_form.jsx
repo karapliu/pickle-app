@@ -21,8 +21,8 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const newMember = Object.assign({}, this.state, { ['zipcode']: parseInt(this.state.zipcode) });
-    this.props.processForm(newMember);
-    <Redirect to="/" />
+    this.props.processForm(newMember)
+      .then(() => this.props.history.push('/'));
   }
 
   update(field) {

@@ -14,8 +14,8 @@ class AccountInfo extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const member = Object.assign({}, this.state, { ['zipcode']: parseInt(this.state.zipcode) });
-    this.props.processForm(member);
-    <Redirect to="/" />
+    this.props.processForm(member)
+      .then(() => this.props.history.push('/account/profile/photo'));
   }
 
   update(field) {

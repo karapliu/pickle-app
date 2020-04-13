@@ -19,4 +19,10 @@ class Api::MembersServicesController < ApplicationController
   def destroy
 
   end
+
+  private
+
+  def member_services_params 
+    params.require(:member_services).permit(:member_id, :service_id, :price)
+  end
 end

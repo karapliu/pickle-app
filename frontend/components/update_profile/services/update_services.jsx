@@ -4,13 +4,15 @@ import UpdateHeader from '../update_header/update_header';
 class UpdateServices extends React.Component {
   constructor(props) {
     super(props);
-    const allServices = {}
+    let allServices = {}
     this.props.currentMember.service_ids.map(service_id => {
       const serv = this.props.currentMember.services[service_id];
-      if (serv) {
-        allServices[serv.name] = serv.price
+      allServices[serv.name] = {
+        id: serv.id,
+        price: serv.price
       }
-    })
+    });
+
     this.state = allServices;
   }
 
@@ -19,8 +21,16 @@ class UpdateServices extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
+    return e => this.setState({ [field]: {id: this.state[field]['id'], price: parseInt(e.currentTarget.value)} })
   }
+
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  //   const membersService = {
+  //     member_id: this.props.currentMember.id,
+  //     service_id: this.state
+  //   }
+  // }
 
   render() {
     const { currentMember, services } = this.props;
@@ -37,7 +47,7 @@ class UpdateServices extends React.Component {
         <div className="update-form-content">
           <h3>Which services would you like to offer?</h3>
           <p className="center grey">Set services to active that you want to appear in search and receive business for.</p>
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <div className="service-box">
               <div className="service-circle">
                 <i className="fas fa-suitcase"></i>
@@ -53,18 +63,19 @@ class UpdateServices extends React.Component {
                 <p className="tag">Highest Earners</p>
               </div>
               <p className="grey">Your client's guinea pigs come to your home and stay overnight.</p>
-              <li className="checklist"><i className="fas fa-check check"></i>&nbsp;&nbsp;Earn up to 2x more</li>
-              <li className="checklist"><i className="fas fa-check check"></i>&nbsp;&nbsp;Get your first booking sooner</li>
-              <li className="checklist"><i className="fas fa-check check"></i>&nbsp;&nbsp;Make more money on the weekends (Thu-Sun)</li>
+              <li className="checklist"><i className="fas fa-check med-green"></i>&nbsp;&nbsp;Earn up to 2x more</li>
+              <li className="checklist"><i className="fas fa-check med-green"></i>&nbsp;&nbsp;Get your first booking sooner</li>
+              <li className="checklist"><i className="fas fa-check med-green"></i>&nbsp;&nbsp;Make more money on the weekends (Thu-Sun)</li>
             </div>
             <div className="service-price">
               <p className="grey">What do you want clients to pay per guinea pig per night?</p>
               <div className="price-input-pos">
                 <div className="dollar">$</div>
                 <input 
-                  value={this.state['Guinea Pig Boarding']}
+                  value={this.state['Guinea Pig Boarding'] ? this.state['Guinea Pig Boarding']['price'] : ''}
                   className="price" 
                   type="number" 
+                  placeholder='30'
                   onChange={this.update('Guinea Pig Boarding')}/>
               </div>
             </div>
@@ -87,9 +98,10 @@ class UpdateServices extends React.Component {
               <div className="price-input-pos">
                 <div className="dollar">$</div>
                 <input 
-                  value={this.state['House Sitting']}
+                  value={this.state['House Sitting'] ? this.state['House Sitting']['price'] : ''}
                   className="price" 
                   type="number" 
+                  placeholder='30'
                   onChange={this.update('House Sitting')}/>
               </div>
             </div>
@@ -112,9 +124,10 @@ class UpdateServices extends React.Component {
               <div className="price-input-pos">
                 <div className="dollar">$</div>
                 <input 
-                  value={this.state['Drop-In Visits']}
+                  value={this.state['Drop-In Visits'] ? this.state['Drop-In Visits']['price'] : ''}
                   className="price" 
                   type="number" 
+                  placeholder='30'
                   onChange={this.update('Drop-In Visits')}/>
               </div>
             </div>
@@ -137,9 +150,10 @@ class UpdateServices extends React.Component {
               <div className="price-input-pos">
                 <div className="dollar">$</div>
                 <input 
-                  value={this.state['Guinea Pig Day Care']}
+                  value={this.state['Guinea Pig Day Care'] ? this.state['Guinea Pig Day Care']['price'] : ''}
                   className="price" 
                   type="number" 
+                  placeholder='30'
                   onChange={this.update('Guinea Pig Day Care')}/>
               </div>
             </div>
@@ -163,9 +177,10 @@ class UpdateServices extends React.Component {
               <div className="price-input-pos">
                 <div className="dollar">$</div>
                 <input 
-                  value={this.state['Guinea Pig Grooming']}
+                  value={this.state['Guinea Pig Grooming'] ? this.state['Guinea Pig Grooming']['price'] : ''}
                   className="price" 
                   type="number" 
+                  placeholder='30'
                   onChange={this.update('Guinea Pig Grooming')}/>
               </div>
             </div>

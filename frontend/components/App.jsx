@@ -12,7 +12,7 @@ import Footer from './footer';
 import AccountInfoContainer from './update_profile/account_info/account_info_container';
 import DashboardContainer from './profile/dashboard_container';
 import DetailsContainer from './update_profile/details/details_container';
-import YourPhotoContainer from './update_profile/your_photo/your_photo_container';
+import YourPhotosContainer from './update_profile/your_photos/your_photos_container';
 import UpdateServicesContainer from './update_profile/services/update_services_container';
 import UpdateYourPiggies from './update_profile/your_piggies/update_your_piggies';
 
@@ -68,7 +68,7 @@ class App extends React.Component {
         <ProtectedRoute exact path="/account" component={DashboardContainer} />
         <ProtectedRoute path="/account/profile/account-info" component={AccountInfoContainer} />
         <ProtectedRoute path="/account/profile/details" component={DetailsContainer} />
-        <ProtectedRoute path="/account/profile/photo" component={YourPhotoContainer} />
+        <ProtectedRoute path="/account/profile/photo" component={YourPhotosContainer} />
         <ProtectedRoute path="/account/profile/services" component={UpdateServicesContainer} />
         <ProtectedRoute path="/account/profile/your-piggies" component={UpdateYourPiggies} />
         <Route exact path="/" component={Home} />
