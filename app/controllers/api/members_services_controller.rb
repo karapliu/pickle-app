@@ -11,7 +11,9 @@ class Api::MembersServicesController < ApplicationController
   end
 
   def update
+    @member = Member.find(params[:member_id])
 
+    render 'api/members_services/index'
   end
 
   def destroy
