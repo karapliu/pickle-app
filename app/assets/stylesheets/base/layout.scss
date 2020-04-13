@@ -2,3 +2,41 @@
    font-family: Averta-Regular, Avenir, Helvetica Neue, Calibri, Helvetica, Roboto, sans-serif;
    background-color: #E8EBED;
  }
+
+ .center {
+   text-align: center;
+ }
+
+ .auto {
+   margin: auto;
+ }
+
+ .flex-row {
+   display: flex;
+   flex-direction: row;
+ }
+
+ .flex-column {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .space-between {
+   justify-content: space-between;
+ }
+
+ .jus-center {
+   justify-content: center;
+ }
+
+ .width-100 {
+   width: 100%;
+ }
+
+ .padding-r30 {
+   padding-right: 30px;
+ }
+
+ .grey {
+   color: #66727C
+ }

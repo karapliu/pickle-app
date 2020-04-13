@@ -1,3 +1,4 @@
+// UPDATE FORM HEADER
 .update-form-header {
   height: 67px;
   background-color: #EEEEEE;
@@ -16,12 +17,18 @@
   border-bottom: 3px solid #265936;
 }
 
-.update-form-content-container {
+// UPDATE FORM CONTENT
+.update-container {               // wrapper container to give bg white color
   background-color: white;
-  height: 750px;
 }
 
-.update-h3 {
+.update-container p {             // small text
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.update-container h3 {            // the main header 
   text-align: center;
   font-size: 25px;
   font-weight: 700;
@@ -29,44 +36,27 @@
   margin-bottom: 20px;
 }
 
-.update-form-content {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 610px;
-}
-
-.update-form-content h6 {
+.update-container h6 {            // the small header
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 10px;
   color: #1B1F23;
 }
 
-.update-form-name-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #1B1F23;
-  width: 100%;
+.update-form-content {            // wrapper to center content 
+  margin: auto;
+  width: 610px;
 }
 
-.update-form-name-label:first-child {
-  padding-right: 30px;
-}
-
-.update-form-label {
+.update-form-label {              // label text
   font-size: 13px;
   font-weight: 600;
   color: #1B1F23;
 }
 
-.update-form-name {
-  display: flex;
-  justify-content: space-between;
-}
-
-.update-form-input {
+// FORM INPUT 
+.update-form-input {               
+  font-size: 13px;
   font-weight: normal;
   display: block;
   width: 100%;
@@ -76,56 +66,57 @@
   padding: 3px 3px 3px 5px;
   margin-top: 2px;
   margin-bottom: 20px;
-  font-size: inherit;
 }
-
 
 .update-form-input:focus {
   outline: none;
   border: 1px solid #06748A;
 }
 
-.update-form-last {
-  display: flex;
-  flex-direction: column;
-}
-
-.update-form-input-zip {
+.update-textarea {
+  width: 100%;
   font-weight: normal;
-  width: 290px;
-  height: 33px;
+  font-size: 14px;
   border: 1px solid lightgrey;
-  border-radius: 5px;
-  padding: 3px 3px 3px 5px;
-  margin-top: 2px;
-  margin-bottom: 20px;
-  font-size: 13px;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 15px;
 }
 
-.update-form-input-zip:focus {
+.update-textarea:focus {
   outline: none;
   border: 1px solid #06748A;
 }
 
-.photo-upload-container {
-  display: flex;
-  margin-top: 15px;
-}
-
-.update-form-content p {
+// FORM SUBMIT
+.update-form-submit {
+  padding: 10px 15px;
+  background-color: #6D8F54;
+  border-radius: 4px;
   font-size: 14px;
   font-weight: 500;
-  color: #66727C;
-  padding-bottom: 20px;
+  color: white;
+  margin: 30px auto;
 }
 
-.photo-upload-left {
+.update-form-submit:hover {
+  background-color: #265936;
+}
+
+// SPECIFICS
+// ACCOUNT INFO
+.zip {                            
+  width: 290px;
+}
+
+// YOUR PHOTO
+.photo-upload-left {              
   width: 70%;
 }
 
 .photo-upload-right {
   width: 29%;
-  padding: 20px;
+  margin-left: 20px;
 }
 
 input[type="file"] {
@@ -138,31 +129,10 @@ input[type="file"] {
   border: 1px solid lightgrey;
   padding: 10px 20px;
   border-radius: 4px;
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .upload-button:hover {
   background-color: #F2F2F2;
-}
-
-.update-form-submit {
-  padding: 10px 15px;
-  background-color: #6D8F54;
-  border-radius: 4px;
-  font-size: 14px;
-  color: white;
-  margin: 30px auto;
-}
-
-.update-form-submit:hover {
-  background-color: #265936;
-}
-
-.update-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.center {
-  text-align: center;
 }

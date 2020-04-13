@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import { AuthRoute, ProtectedRoute } from '../util/route_utils';
+
+// COMPONENTS
 import SignUpFormContainer from './session_form/signup_form_container';
 import SignInFormContainer from './session_form/signin_form_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import Home from './home/home';
 import ProfileContainer from './profile/profile_container';
-import { AuthRoute, ProtectedRoute } from '../util/route_utils';
 import Footer from './footer';
-import UpdateProfileFormContainer from './update_profile_form/update_profile_form_container';
+import AccountInfoContainer from './update_profile/account_info/account_info_container';
 import DashboardContainer from './profile/dashboard_container';
+import DetailsContainer from './update_profile/details/details_container';
+import YourPhotoContainer from './update_profile/your_photo/your_photo_container';
+import UpdateServices from './update_profile/services/update_services';
+import UpdateYourPiggies from './update_profile/your_piggies/update_your_piggies';
 
 class App extends React.Component {
   // now you can check out props to access route information.
@@ -60,7 +66,11 @@ class App extends React.Component {
         <AuthRoute exact path="/signin" component={SignInFormContainer} />
         <Route exact path="/members/:memberId" component={ProfileContainer} />
         <ProtectedRoute exact path="/account" component={DashboardContainer} />
-        <ProtectedRoute path="/account/profile/account-info" component={UpdateProfileFormContainer} />
+        <ProtectedRoute path="/account/profile/account-info" component={AccountInfoContainer} />
+        <ProtectedRoute path="/account/profile/details" component={DetailsContainer} />
+        <ProtectedRoute path="/account/profile/photo" component={YourPhotoContainer} />
+        <ProtectedRoute path="/account/profile/services" component={UpdateServices} />
+        <ProtectedRoute path="/account/profile/your-piggies" component={UpdateYourPiggies} />
         <Route exact path="/" component={Home} />
       </Switch> 
 

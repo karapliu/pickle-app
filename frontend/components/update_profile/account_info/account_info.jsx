@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import UpdateHeader from '../update_header/update_header';
+import { Redirect } from 'react-router-dom';
 
-class UpdateProfileForm extends React.Component {
+class AccountInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.currentMember;
@@ -14,6 +15,7 @@ class UpdateProfileForm extends React.Component {
     e.preventDefault();
     const member = Object.assign({}, this.state, { ['zipcode']: parseInt(this.state.zipcode) });
     this.props.processForm(member);
+    <Redirect to="/" />
   }
 
   update(field) {
@@ -25,22 +27,17 @@ class UpdateProfileForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return(
       <>
-      <div className="update-form-header">
-        <Link className="active" to="/account/profile/account-info"><i className="fas fa-info-circle"></i> Account Info</Link>
-        <Link to="/"><i className="fas fa-hand-holding-usd"></i> Services &#38; Rates</Link>
-      </div>
-
-      <div className="update-form-content-container">
+      <UpdateHeader location={location.hash} />
+      <div className="update-container">
+        <h3>Let's start with the basics</h3>
         <div className="update-form-content">
-          <h3 className="update-h3">Let's start with the basics</h3>
-          <p className="center">Information that will be on your profile.</p>
+          <p className="grey center">Information that will be on your profile.</p>
           <h6>Update your personal information</h6>
-          <form className="update-form" onSubmit={this.handleSubmit}>
-            <div className="update-form-name">
-              <label className="update-form-name-label">First Name
+          <form className="flex-column" onSubmit={this.handleSubmit}>
+            <div className="flex-row space-between">
+              <label className="update-form-label width-100 padding-r30">First Name
                 <input 
                   type="text"
                   onChange={this.update('first_name')}
@@ -49,7 +46,7 @@ class UpdateProfileForm extends React.Component {
                 />
               </label>
 
-              <label className="update-form-name-label">Last Name
+              <label className="update-form-label width-100">Last Name
                 <input 
                   type="text"
                   onChange={this.update('last_name')}
@@ -68,34 +65,16 @@ class UpdateProfileForm extends React.Component {
               />
             </label>
 
-            <div className="update-form-last">
+            <div className="flex-column">
               <label className="update-form-label">Zipcode</label>
                 <input
                     type="text"
                     onChange={this.update('zipcode')}
                     value={this.state.zipcode}
-                    className="update-form-input-zip"
+                    className="update-form-input zip"
                   />
             </div>
 
-            <div className="photo-upload-container">
-              <div className="photo-upload-left">
-                <h6>Profile Photo</h6>
-                <p>This is the first photo guinea pig owners will see. Build trust! 
-                  Well-lit, clear frontal face photos (no sunglasses) are recommended. 
-                  Recommended dimensions are 400 x 400 pixels.
-                </p>
-                <label className="upload-button">
-                  <i className="fas fa-image"></i> Upload Your Photo
-                  <input
-                    type="file"
-                    onChange={this.handleFile} />
-                </label>
-              </div>
-              <div className="photo-upload-right">
-                <img src={this.props.currentMember.photoUrl} />
-              </div>
-            </div>
             <button className="update-form-submit" type="submit">Save &#38; Continue</button>
           </form>
         </div>
@@ -105,4 +84,4 @@ class UpdateProfileForm extends React.Component {
   }
 }
 
-export default UpdateProfileForm;
+export default AccountInfo;

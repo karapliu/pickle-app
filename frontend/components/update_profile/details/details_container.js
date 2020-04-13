@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import { updateMember } from '../../actions/member_actions';
-import UpdateProfileForm from './update_profile_form';
+import Details from './details';
+import { updateMember } from '../../../actions/member_actions';
 
 const mapStateToProps = state => ({
-  currentMember: state.entities.members[state.session.currentMemberId],
-  errors: state.errors.session
+  currentMember: state.entities.members[state.session.currentMemberId]
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UpdateProfileForm);
+)(Details);
