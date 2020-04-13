@@ -4,7 +4,7 @@ import UpdateServices from './update_services';
 
 const mapStateToProps = state => ({
   currentMember: state.entities.members[state.session.currentMemberId],
-  services: state.entities.services
+  services: Object.values(state.entities.services)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -110,20 +110,20 @@
 }
 
 // YOUR PHOTO
-.photo-upload-left {              
+.photo-upload-left {                // flex left
   width: 70%;
 }
 
-.photo-upload-right {
+.photo-upload-right {               // flex right
   width: 29%;
   margin-left: 20px;
 }
 
-input[type="file"] {
+input[type="file"] {                // remove display of file input
   display: none;
 }
 
-.upload-button {
+.upload-button {                    // file input replace
   font-size: 14px;
   cursor: pointer;
   border: 1px solid lightgrey;
@@ -138,15 +138,24 @@ input[type="file"] {
 }
 
 // SERVICE ITEM 
-.service-box {
+.service-box {                      // box for each service
   border: 1px solid #CFD7DE;
-  border-radius: 3px;
+  border-radius: 3px 3px 0px 0px;
+  padding: 15px 15px 15px 50px;
+  position: relative;
+}
+
+.service-price {
+  border-left: 1px solid #CFD7DE;
+  border-right: 1px solid #CFD7DE;
+  border-bottom: 1px solid #CFD7DE;
+  border-radius: 0px 0px 3px 3px;
   padding: 15px 15px 15px 50px;
   margin-bottom: 20px;
   position: relative;
 }
 
-.service-box .tag {
+.service-box .tag {                 // highest earning tag
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -159,13 +168,13 @@ input[type="file"] {
   margin-bottom: 10px;
 }
 
-.checklist {
+.checklist {                        // checklist
   list-style-type: none;
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.service-circle {
+.service-circle {                   // icon circle
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,4 +189,90 @@ input[type="file"] {
   top: 10px;
   left: -20px;
   z-index: 2;
+}
+
+.switch-pos {                        // switch 
+  position: absolute;
+  right: 10px;
+}
+
+.active-switch {
+  position: relative;
+  display: inline-block;
+  width: 47px;
+  height: 15px;
+}
+
+.active-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #CFD7DE;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0px;
+  bottom: -3px;
+  background-color: white;
+  border: 1px solid #CFD7DE;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #9CB37E;
+}
+
+input:checked + .slider:before {
+  background-color: #265936;
+  border: 1px solid #9CB37E;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.price-input-pos {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.dollar {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.price {
+  font-size: 14px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 5px 10px 5px 40px;
+  width: 40px;
+  height: 28px;
+}
+
+.price:focus {
+  outline: none;
+  border: 1px solid #06748A;
 }
