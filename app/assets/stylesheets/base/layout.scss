@@ -29,6 +29,10 @@
    justify-content: center;
  }
 
+ .align-center {
+   align-items: center;
+ }
+
  .width-100 {
    width: 100%;
  }
@@ -40,3 +44,9 @@
  .grey {
    color: #66727C
  }
+
+ .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}

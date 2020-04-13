@@ -13,7 +13,7 @@ import AccountInfoContainer from './update_profile/account_info/account_info_con
 import DashboardContainer from './profile/dashboard_container';
 import DetailsContainer from './update_profile/details/details_container';
 import YourPhotoContainer from './update_profile/your_photo/your_photo_container';
-import UpdateServices from './update_profile/services/update_services';
+import UpdateServicesContainer from './update_profile/services/update_services_container';
 import UpdateYourPiggies from './update_profile/your_piggies/update_your_piggies';
 
 class App extends React.Component {
@@ -69,7 +69,7 @@ class App extends React.Component {
         <ProtectedRoute path="/account/profile/account-info" component={AccountInfoContainer} />
         <ProtectedRoute path="/account/profile/details" component={DetailsContainer} />
         <ProtectedRoute path="/account/profile/photo" component={YourPhotoContainer} />
-        <ProtectedRoute path="/account/profile/services" component={UpdateServices} />
+        <ProtectedRoute path="/account/profile/services" component={UpdateServicesContainer} />
         <ProtectedRoute path="/account/profile/your-piggies" component={UpdateYourPiggies} />
         <Route exact path="/" component={Home} />
       </Switch> 
