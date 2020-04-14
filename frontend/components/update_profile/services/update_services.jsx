@@ -26,9 +26,16 @@ class UpdateServices extends React.Component {
 
   // handleSubmit(e) {
   //   e.preventDefault();
+
+  //   Object.keys(this.state).map(service => {
+  //     let membersService = {
+  //       member_id: this.props.currentMember.id,
+  //       service_id: this.props.services[0][service]
+  //     }
+  //   })
   //   const membersService = {
   //     member_id: this.props.currentMember.id,
-  //     service_id: this.state
+  //     service_id: 
   //   }
   // }
 
@@ -39,7 +46,6 @@ class UpdateServices extends React.Component {
       return null
     }
 
-    console.log(this.state);
     return (
       <>
       <UpdateHeader location={location.hash} />

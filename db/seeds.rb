@@ -17,6 +17,8 @@ asap = Member.create!({first_name: "A$AP", last_name: "Rocky", email: "asaprocky
 
 # SERVICES 
 boarding = Service.create!({name: "Guinea Pig Boarding"})
+house_sitting = Service.create!({name: "House Sitting"})
+drop_in_visits = Service.create!({name: "Drop-In Visits"})
 day_care = Service.create!({name: "Guinea Pig Day Care"})
 grooming = Service.create!({name: "Guinea Pig Grooming"})
 
