@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: members
+#
+#  id              :bigint           not null, primary key
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  email           :string           not null
+#  zipcode         :integer          not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  about_me        :text
+#  hosting_max     :integer
+#
 class Member < ApplicationRecord
   validates :first_name, :last_name, :zipcode, :password_digest, presence: true
   validates :email, :session_token, presence: true, uniqueness: true
@@ -15,6 +31,10 @@ class Member < ApplicationRecord
   has_many :services, 
     through: :ms, 
     source: :service
+
+  has_many :guinea_pigs, 
+    foreign_key: :owner_id, 
+    class_name: :GuineaPig
 
   has_one_attached :profile_pic
   has_many_attached :photos

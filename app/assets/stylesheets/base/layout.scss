@@ -37,6 +37,10 @@
    align-items: center;
  }
 
+ .width-50 {
+   width: 150px;
+ }
+
  .width-100 {
    width: 100%;
  }
@@ -57,4 +61,13 @@
   content: "";
   clear: both;
   display: table;
+}
+
+.font-reset {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
 }

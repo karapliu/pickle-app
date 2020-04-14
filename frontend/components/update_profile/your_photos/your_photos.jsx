@@ -15,7 +15,6 @@ class YourPhotos extends React.Component {
   }
 
   handleFile(e) {
-    debugger;
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -68,7 +67,7 @@ class YourPhotos extends React.Component {
                 </div>
 
                 <div className="photo-upload-right">
-                  <img className="uploaded-photo" src={this.state.photoUrl} />
+                  <img src={this.state.photoUrl} />
                   <img src={this.state.photoUrl ? "" : this.props.currentMember.photoUrl} />
                 </div>
               </div>

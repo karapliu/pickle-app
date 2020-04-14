@@ -73,6 +73,10 @@
   border: 1px solid #06748A;
 }
 
+.radio-buttons {
+  padding: 10px 0px;
+}
+
 .update-textarea {
   width: 100%;
   font-weight: normal;
@@ -119,7 +123,7 @@
   margin-left: 20px;
 }
 
-.photo-upload-left input[type="file"] {      // remove display of file input
+input[type="file"] {      // remove display of file input
   display: none;
 }
 
@@ -275,4 +279,29 @@ input:checked + .slider:before {
 .price:focus {
   outline: none;
   border: 1px solid #06748A;
+}
+
+.add-piggy {
+  border: 1px solid #CFD7DE;
+  padding: 15px 24px 15px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.piggy-photo-box {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #265936;
+  border-radius: 5px;
+}
+
+.piggy-photo-box p {
+  font-size: 15px;
+  color: #265936;
+}
+
+.uploaded-photo {
+  position: absolute;
+  height: 200px;
+  width: auto;
 }

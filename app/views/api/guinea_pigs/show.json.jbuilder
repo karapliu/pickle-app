@@ -1,0 +1,1 @@
+json.extract! @guinea_pig, :id, :name, :sex, :age, :owner_id
