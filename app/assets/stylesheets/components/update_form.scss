@@ -305,3 +305,58 @@ input:checked + .slider:before {
   height: 200px;
   width: auto;
 }
+
+.u-your-piggies {
+  border-bottom: 1px solid #CFD7DE;
+  padding: 5px;
+}
+
+.u-pig {
+  width: 170px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.u-pig img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}
+
+.u-pig p {
+  color: white;
+  margin: 0px;
+  position: absolute;
+  bottom: 5px;
+  left: 9px;
+}
+
+.bg-green {
+  background-color: #9CB37E;
+}
+
+.add {
+  font-size: 14px;
+  border: 1px dashed #83A05C;
+  color: #83A05C;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add:hover {
+  border-color: #265936;
+  color: #265936;
+}
+
+.add:hover > .fa-plus-circle {
+  color: #265936;
+}

@@ -8,6 +8,7 @@
 
 MembersService.destroy_all
 Service.destroy_all
+GuineaPig.destroy_all
 Member.destroy_all
 
 # MEMBERS 

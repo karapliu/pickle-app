@@ -1,5 +1,6 @@
 import React from 'react';
 import UpdateHeader from '../update_header/update_header';
+import { Link } from 'react-router-dom';
 
 class UpdateYourPiggies extends React.Component {
   constructor(props) {
@@ -16,10 +17,12 @@ class UpdateYourPiggies extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchGuineaPigs(this.props.currentMember.id);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    // const guineaPig = Object.assign({}, this.state.guineaPig, { 'age': parseInt(this.state.age)});
-    // this.props.addGuineaPig(guineaPig)
     const formData = new FormData();
     formData.append('guinea_pig[name]', this.state.name);
     formData.append('guinea_pig[age]', parseInt(this.state.age));
@@ -54,15 +57,50 @@ class UpdateYourPiggies extends React.Component {
   }
 
   update(field) {
-    // debugger;
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
   render() {
+    const { guineaPigs, currentMember } = this.props;
+
+    if (!guineaPigs) {
+      return null;
+    }
+    // debugger;
+    const allPiggies = currentMember.guinea_pig_ids.map(pigId => {
+      debugger;
+      const gPig = guineaPigs[pigId];
+
+      if (gPig) {
+        if (gPig.photoUrl === "") {
+          return <div className="u-pig bg-green">
+            <img src={window.paw} />
+            <p className="center">{gPig.name}</p>
+          </div>
+        } else {
+          return <div className="u-pig">
+            <img src={gPig.photoUrl} />
+            <p>{gPig.name}</p>
+          </div>
+        }
+      } else {
+        return '';
+      }
+    })
+
     return (
       <>
         <UpdateHeader location={location.hash} />
         <div className="update-container">
+          <div className="u-your-piggies flex-row jus-center">
+            {allPiggies}
+            <Link to="/account/profile/your-piggies">
+              <div className="u-pig add">
+                <i className="fas fa-plus-circle"></i>
+                Add a piggy
+              </div>
+            </Link>
+          </div>
           <div className="update-form-content">
             <h3>Add a piggy</h3>
             <p className="center">Tell us a bit about your guinea pig</p>

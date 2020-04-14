@@ -1,22 +1,21 @@
 .dashboard-container {
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.dashboard-flex {
+.dashboard-content {
   width: 1100px;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
 }
 
 .dashboard-left {
   width: 32%;
-  height: 500px;
+  height: auto;
 }
 
 .dashboard-right {
   width: 65%;
-  height: 500px;
+  height: auto;
 }
 
 .dashboard-box {
@@ -27,25 +26,16 @@
   margin-bottom: 20px;
 }
 
+.dashboard-box h2 {
+  margin-bottom: 17px;
+}
+
 .pickle-balance {
   background-color: #FFFFFF;
   padding: 20px 0px;
   border-bottom: 2px solid #CFD7DD;
   border-radius: 6px;
   margin-bottom: 20px;
-}
-
-.add-30-marg {
-  margin: 0px 30px;
-}
-
-.flex-row {
-  display: flex;
-}
-
-.flex-row-btwn {
-  display: flex;
-  justify-content: space-between;
 }
 
 .profile-box-photo {
@@ -60,12 +50,12 @@
   margin-left: 10px;
 }
 
-.dashboard-container h3 {
+.dashboard-content h3 {
   font-weight: 800;
   margin-bottom: 10px;
 }
 
-.dashboard-container a {
+.dashboard-content a {
   font-size: 14px;
   color: #6D8F54;
   margin-bottom: 4px;
@@ -76,12 +66,12 @@
   color: #265936;
 }
 
-.dashboard-container h2 {
+.dashboard-content h2 {
   font-size: 26px;
   font-weight: bold;
 }
 
-.dashboard-container p {
+.dashboard-content p {
   color: #66727C;
   font-size: 14px;
 }
@@ -130,6 +120,60 @@
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
+}
+
+.d-your-piggies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.d-pig {
+  width: 300px;
+  display: block;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+  box-sizing: border-box;
+  border: 1px solid #CFD7DD;
+  border-bottom: 3px solid #CFD7DD;
+  margin: 15px 10px;
+}
+
+.d-pig img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 0;
+}
+
+.d-pig-name {
+  color: white;
+  position: absolute;
+  bottom: 35px;
+  left: 13px;
+  text-shadow: 0 1px 5px rgba(0,0,0,.6);
+}
+
+.d-pig-links {
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 14px;
+}
+
+.d-pig-links a {
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+.d-pig-links a:hover {
+  text-decoration: underline;
 }
 
 

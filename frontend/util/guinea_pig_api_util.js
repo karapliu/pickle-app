@@ -5,3 +5,10 @@ export const addGuineaPig = guinea_pig => (
     data: { guinea_pig }
   })
 );
+
+export const fetchGuineaPigs = memberId => (
+  $.ajax ({
+    method: 'GET',
+    url: `api/members/${memberId}/guinea_pigs`
+  })
+)

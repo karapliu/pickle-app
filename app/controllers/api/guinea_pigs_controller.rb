@@ -1,6 +1,6 @@
 class Api::GuineaPigsController < ApplicationController
   def index
-    @guinea_pigs = GuineaPig.all
+    @guinea_pigs = current_member.guinea_pigs
 
     render 'api/guinea_pigs/index'
   end
@@ -22,6 +22,6 @@ class Api::GuineaPigsController < ApplicationController
   private
 
   def guinea_pig_params
-    params.require(:guinea_pig).permit(:name, :age, :sex)
+    params.require(:guinea_pig).permit(:name, :age, :sex, :photo)
   end
 end
