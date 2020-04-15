@@ -36,6 +36,11 @@ export const fetchGuineaPigs = memberId => dispatch => (
     .then(guineaPigs => dispatch(receiveAllGuineaPigs(guineaPigs)))
 );
 
+export const fetchGuineaPig = guineaPigId => dispatch => (
+  GuineaPigAPIUtil.fetchGuineaPig(guineaPigId)
+    .then(guineaPig => dispatch(receiveGuineaPig(guineaPig)))
+);
+
 export const updateGuineaPig = guineaPig => dispatch => (
   GuineaPigAPIUtil.updateGuineaPig(guineaPig)
     .then(guineaPig => dispatch(receiveGuineaPig(guineaPig)))

@@ -12,3 +12,10 @@ export const updateMember = member => (
     data: { member }
   })
 );
+
+export const fetchMembers = () => (
+  $.ajax ({
+    method: 'GET',
+    url: 'api/members'
+  })
+);

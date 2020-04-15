@@ -4,28 +4,45 @@ import UpdateHeader from '../update_header/update_header';
 class UpdateServices extends React.Component {
   constructor(props) {
     super(props);
-    let allServices = {}
-    this.props.currentMember.service_ids.map(service_id => {
-      const serv = this.props.currentMember.services[service_id];
-      allServices[serv.name] = {
-        id: serv.id,
-        price: serv.price
-      }
-    });
+    // let allServices = {}
+    // this.props.currentMember.service_ids.map(service_id => {
+    //   const serv = this.props.currentMember.services[service_id];
+    //   allServices[serv.name] = {
+    //     id: serv.id,
+    //     price: serv.price
+    //   }
+    // });
 
-    this.state = allServices;
+    this.state = {};
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchServices(this.props.currentMember.id)
+      .then(state => {
+        const { services } = state.entities;
+        let allServices = {};
+        Object.values(services).forEach(service => {
+          allServices[service.name] = {  
+            id: service.id,
+            price: service.price,
+            msId: service.msId
+          }
+        });
+
+        this.setState(allServices);
+      });
   }
 
   update(field) {
-    return e => this.setState({ [field]: {id: this.state[field]['id'], price: parseInt(e.currentTarget.value)} })
+    return e => this.setState({ [field]: {id: this.state[field]['id'], price: parseInt(e.currentTarget.value), msId: this.state[field]['msId']} })
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.props.updateMembersService(Object.assign({}, this.state))
+      .then(() => this.props.history.push('/account/profile/details'));
 
   //   Object.keys(this.state).map(service => {
   //     let membersService = {
@@ -37,13 +54,15 @@ class UpdateServices extends React.Component {
   //     member_id: this.props.currentMember.id,
   //     service_id: 
   //   }
-  // }
+  }
+
+  // make array of values to send to server as a collection
 
   render() {
     const { currentMember, services } = this.props;
 
     if (!services) {
-      return null
+      return null;
     }
 
     return (
@@ -53,7 +72,7 @@ class UpdateServices extends React.Component {
         <div className="update-form-content">
           <h3>Which services would you like to offer?</h3>
           <p className="center grey">Set services to active that you want to appear in search and receive business for.</p>
-          <form onSubmit={this.handleSubmit}>
+          <form className="flex-column jus-center" onSubmit={this.handleSubmit}>
             <div className="service-box">
               <div className="service-circle">
                 <i className="fas fa-suitcase"></i>
@@ -190,6 +209,7 @@ class UpdateServices extends React.Component {
                   onChange={this.update('Guinea Pig Grooming')}/>
               </div>
             </div>
+            <button className="update-form-submit" type="submit">Save &#38; Continue</button>
           </form>
           <div className="clearfix" />
         </div>

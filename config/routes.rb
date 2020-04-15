@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :guinea_pigs, only: [:index]
     end
     resource :session, only: [:create, :destroy]
+    patch 'members_services/update', to: 'members_services#mass_update'
     resources :members_services, only: [:create, :update, :destroy]
     resources :guinea_pigs, only: [:show, :create, :update, :destroy]
   end

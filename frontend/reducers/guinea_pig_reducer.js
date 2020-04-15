@@ -5,7 +5,7 @@ const guineaPigReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_GUINEA_PIG:
-      return Object.assign({}, state, action.guineaPig);
+      return Object.assign({}, state, {[action.guineaPig.id]: action.guineaPig });
     case RECEIVE_ALL_GUINEA_PIGS:
       return action.guineaPigs;
     case REMOVE_SINGLE_GUINEA_PIG:

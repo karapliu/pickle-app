@@ -13,6 +13,13 @@ export const fetchGuineaPigs = memberId => (
   })
 );
 
+export const fetchGuineaPig = guineaPigId => (
+  $.ajax ({
+    method: 'GET',
+    url: `/api/guinea_pigs/${guineaPigId}`
+  })
+);
+
 export const updateGuineaPig = guineaPig => (
   $.ajax ({
     method: 'PATCH',

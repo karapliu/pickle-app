@@ -76,7 +76,7 @@ class UpdateYourPiggies extends React.Component {
     if (!guineaPigs) {
       return null;
     }
-    console.log(this.state);
+    
     const allPiggies = currentMember.guinea_pig_ids.map(pigId => {
       const gPig = guineaPigs[pigId];
 
@@ -101,7 +101,7 @@ class UpdateYourPiggies extends React.Component {
 
     return (
       <>
-        <UpdateHeader location={location.hash} />
+        <UpdateHeader location='#/account/profile/your-piggies' />
         <div className="update-container">
           <div className="u-your-piggies flex-row jus-center">
             {allPiggies}

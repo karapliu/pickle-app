@@ -10,6 +10,19 @@ class Api::MembersServicesController < ApplicationController
 
   end
 
+  def mass_update
+    services = params[:services]
+
+    services.values.each do |service|
+      ms = MembersService.find(service[:msId])
+      ms.update(price: service[:price].to_i)
+    end
+
+    @member = current_member
+
+    render 'api/members_services/index'
+  end
+
   def update
     @member = Member.find(params[:member_id])
 

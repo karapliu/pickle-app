@@ -16,6 +16,8 @@ import YourPhotosContainer from './update_profile/your_photos/your_photos_contai
 import UpdateServicesContainer from './update_profile/services/update_services_container';
 import UpdateYourPiggiesContainer from './update_profile/your_piggies/update_your_piggies_container';
 import EditGuineaPigContainer from './update_profile/your_piggies/edit_guinea_pig_container';
+import GuineaPigContainer from './guinea_pig/guinea_pig_container';
+import SearchContainer from './search/search_container';
 
 class App extends React.Component {
   // now you can check out props to access route information.
@@ -73,6 +75,8 @@ class App extends React.Component {
         <ProtectedRoute path="/account/profile/services" component={UpdateServicesContainer} />
         <ProtectedRoute exact path="/account/profile/your-piggies" component={UpdateYourPiggiesContainer} />
         <ProtectedRoute path="/account/profile/your-piggies/:guineaPigId" component={EditGuineaPigContainer} />
+        <ProtectedRoute path="/account/guinea-pigs/:guineaPigId" component={GuineaPigContainer} />
+        {/* <Route path= */}
         <Route exact path="/" component={Home} />
       </Switch> 
 

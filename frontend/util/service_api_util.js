@@ -5,10 +5,12 @@ export const fetchServices = memberId => (
   })
 );
 
-export const updateMembersService = service => (
+export const updateMembersService = services => (
   $.ajax ({
     method: 'PATCH',
-    url: `/api/members_services/${service.id}`,
-    data: { service }
+    url: `/api/members_services/update`,
+    data: { services }
   })
 );
+
+// service { id: , price: ,member_id: , service_id: }

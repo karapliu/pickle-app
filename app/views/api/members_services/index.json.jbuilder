@@ -8,12 +8,11 @@
     
 # end
 
-json.services do 
   @member.ms.each do |members_service|
-    json.set! members_service.id do 
+    json.set! members_service.service_id do 
       json.id members_service.service_id
+      json.msId members_service.id
       json.name members_service.service.name
       json.price members_service.price
     end
   end
-end

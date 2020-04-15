@@ -3,8 +3,8 @@ import HostingPigs from './hosting-pigs';
 
 class Profile extends React.Component {
   componentDidMount() {
-    this.props.fetchMember(this.props.match.params.memberId)
-    this.props.fetchServices(this.props.match.params.memberId)
+    this.props.fetchMember(this.props.match.params.memberId);
+    this.props.fetchServices(this.props.match.params.memberId);
   }
 
   render() {

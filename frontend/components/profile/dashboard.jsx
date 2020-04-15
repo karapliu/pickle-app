@@ -29,7 +29,7 @@ class Dashboard extends React.Component {
             <h2 className="d-pig-name">{gPig.name}</h2>
             <div className="d-pig-links flex-row space-between">
               <Link to={`/account/profile/your-piggies/${pigId}`}><i className="far fa-edit"></i> Edit</Link>
-              <Link to="/"><i className="far fa-eye"></i> View</Link>
+              <Link to={`/account/guinea-pigs/${pigId}`}><i className="far fa-eye"></i> View</Link>
               <button onClick={() => this.removeGPig(pigId)}><i className="far fa-minus-square"></i> Remove</button>
             </div>
           </div>
@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
             <h2 className="d-pig-name">{gPig.name}</h2>
             <div className="d-pig-links flex-row space-between">
               <Link to={`/account/profile/your-piggies/${pigId}`}><i className="far fa-edit"></i> Edit</Link>
-              <Link to="/"><i className="far fa-eye"></i> View</Link>
+              <Link to={`/account/guinea-pigs/${pigId}`}><i className="far fa-eye"></i> View</Link>
               <button onClick={() => this.removeGPig(pigId)}><i className="far fa-minus-square"></i> Remove</button>
             </div>
           </div>

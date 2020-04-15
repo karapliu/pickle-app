@@ -13,12 +13,17 @@ const receiveMembersService = service => ({
   service
 })
 
-export const fetchServices = memberId => dispatch => (
+export const fetchServices = memberId => (dispatch, state) => (
   ServiceAPIUtil.fetchServices(memberId)
-    .then(services => dispatch(receiveServices(services)))
+    .then(services => {
+      dispatch(receiveServices(services));
+      return state();
+    })
 );
 
-export const updateMembersService = service => dispatch => (
-  ServiceAPIUtil.updateMembersService(service)
-    .then(service => dispatch(receiveMembersService(service)))
+export const updateMembersService = services => dispatch => (
+  ServiceAPIUtil.updateMembersService(services)
+    .then(services => {
+      return dispatch(receiveMembersService(services))
+    })
 );

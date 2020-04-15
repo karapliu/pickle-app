@@ -43,7 +43,6 @@ class YourPhotos extends React.Component {
   }
 
   render () {
-    console.log(this.state);
     return(
       <>
         <UpdateHeader location={location.hash} />

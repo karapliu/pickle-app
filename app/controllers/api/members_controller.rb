@@ -1,4 +1,10 @@
 class Api::MembersController < ApplicationController
+  def index
+    @members = Member.all 
+
+    render 'api/members/index'
+  end
+
   def show
     @member = Member.find_by(id: params[:id])
     @services = @member.services
