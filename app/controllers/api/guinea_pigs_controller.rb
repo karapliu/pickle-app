@@ -15,8 +15,24 @@ class Api::GuineaPigsController < ApplicationController
     end
   end
 
-  def destroy
+  def update
+    @guinea_pig = GuineaPig.find(params[:id])
 
+    if @guinea_pig.update(guinea_pig_params)
+      render 'api/guinea_pigs/show'
+    else
+      render json: ['This Guinea Pig does not exist'], status: 404
+    end
+  end
+
+  def destroy
+    @guinea_pig = GuineaPig.find(params[:id])
+
+    if @guinea_pig.destroy
+      render 'api/guinea_pigs/show'
+    else
+      render json: ['This Guinea Pig does not exist'], status: 404
+    end
   end
 
   private

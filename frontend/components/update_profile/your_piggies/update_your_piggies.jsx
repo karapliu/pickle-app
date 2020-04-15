@@ -12,13 +12,15 @@ class UpdateYourPiggies extends React.Component {
       photoFile: null,
       photoUrl: null
     };
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.removeGPig = this.removeGPig.bind(this)
   }
 
   componentDidMount() {
-    this.props.fetchGuineaPigs(this.props.currentMember.id);
+    this.props.fetchGuineaPigs(this.props.currentMember.id)
+      .then(() => this.setState(this.props.guineaPig));
   }
 
   handleSubmit(e) {
@@ -32,13 +34,15 @@ class UpdateYourPiggies extends React.Component {
       formData.append('guinea_pig[photo]', this.state.photoFile);
     }
 
+    const requestUrl = this.props.method === 'POST' ? '/api/guinea_pigs' : `/api/guinea_pigs/${this.state.id}`;
+
     $.ajax({
-      method: 'POST',
-      url: 'api/guinea_pigs',
+      method: this.props.method,
+      url: requestUrl,
       data: formData,
       contentType: false, 
       processData: false
-    }).then(() => this.props.history.push(`/members/${this.props.currentMember.id}`));
+    }).then(() => this.props.history.push('/account'));
   }
 
   handleFile(e) {
@@ -60,33 +64,40 @@ class UpdateYourPiggies extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
+  removeGPig(e) {
+    e.preventDefault();
+    this.props.removeGuineaPig(this.props.guineaPig.id)
+      .then(() => this.props.history.push('/'));
+  }
+
   render() {
-    const { guineaPigs, currentMember } = this.props;
+    const { guineaPigs, currentMember, formType, removeGuineaPig, guineaPig } = this.props;
 
     if (!guineaPigs) {
       return null;
     }
-    // debugger;
+    console.log(this.state);
     const allPiggies = currentMember.guinea_pig_ids.map(pigId => {
-      debugger;
       const gPig = guineaPigs[pigId];
 
       if (gPig) {
         if (gPig.photoUrl === "") {
-          return <div className="u-pig bg-green">
+          return <Link key={`gpig-${pigId}`} to={`/account/profile/your-piggies/${pigId}`}><div className="u-pig bg-green">
             <img src={window.paw} />
             <p className="center">{gPig.name}</p>
-          </div>
+          </div></Link>
         } else {
-          return <div className="u-pig">
+          return <Link key={`gpig-${pigId}`} to={`/account/profile/your-piggies/${pigId}`}><div className="u-pig">
             <img src={gPig.photoUrl} />
             <p>{gPig.name}</p>
-          </div>
+          </div></Link>
         }
       } else {
         return '';
       }
     })
+
+  const removeButton = guineaPig ? <button onClick={this.removeGPig}>Remove {guineaPig.name}</button> : "";
 
     return (
       <>
@@ -102,8 +113,8 @@ class UpdateYourPiggies extends React.Component {
             </Link>
           </div>
           <div className="update-form-content">
-            <h3>Add a piggy</h3>
-            <p className="center">Tell us a bit about your guinea pig</p>
+            <h3>{formType}</h3>
+            <p className="center">{this.props.formType === "Add a Piggy" ? 'Tell us a bit about your guinea pig' : 'Update information about your guinea pig'}</p>
             <form className="flex-column" onSubmit={this.handleSubmit}>
               <div className="add-piggy">
                 <label className="update-form-label">Name
@@ -131,34 +142,32 @@ class UpdateYourPiggies extends React.Component {
                         value="Male"
                         onChange={this.update('sex')}
                         name="sex"
-                        />
+                        checked={this.state.sex === 'Male' ? true : false}/>
                       <label className="font-reset">Male</label>
                       <input 
                         type="radio"
                         value="Female"
                         onChange={this.update('sex')}
                         name="sex"
-                        />
+                        checked={this.state.sex === 'Female' ? true : false} />
                        <label className="font-reset">Female</label>
                     </div>
                     </label>
                   </div>
                 </div>
-                <div className="piggy-photo-box flex-row jus-center align-center">
-                  <p className={this.state.photoUrl ? "hidden" : ""}>Upload a photo by clicking the button below <i className="fas fa-hand-point-down"></i></p>
+                
+                <label className="piggy-photo-box flex-row jus-center align-center">
+                  <p className={this.state.photoUrl ? "hidden" : ""}><i className="fas fa-image"></i>&nbsp;&nbsp;Upload a photo</p>
                   <img className="uploaded-photo" src={this.state.photoUrl} />
-                </div>
-                <div className="flex-row jus-center">
-                  <label className="upload-button">
-                    <i className="fas fa-image"></i> Upload a photo
-                    <input 
-                      type="file"
-                      onChange={this.handleFile} />
-                  </label>
-                </div>
+                  <input 
+                    type="file"
+                    onChange={this.handleFile} />
+                </label>
               </div>
-              <button className="update-form-submit" type="submit">Add a Piggy</button>
+              <button className="update-form-submit" type="submit">{formType}</button>
             </form>
+            <p className="remove">{removeButton}</p>
+            <div className="clearfix" />
           </div>
         </div>
       </>

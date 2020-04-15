@@ -293,6 +293,7 @@ input:checked + .slider:before {
   height: 200px;
   border: 2px dashed #265936;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .piggy-photo-box p {
@@ -359,4 +360,8 @@ input:checked + .slider:before {
 
 .add:hover > .fa-plus-circle {
   color: #265936;
+}
+
+.remove {
+  text-align: center;
 }

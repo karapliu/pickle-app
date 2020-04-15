@@ -167,13 +167,16 @@
   padding: 14px;
 }
 
-.d-pig-links a {
+.d-pig-links a, button {
   font-size: 15px;
   margin-right: 8px;
+  color: #6D8F54;
 }
 
-.d-pig-links a:hover {
+.d-pig-links a:hover, button:hover {
   text-decoration: underline;
 }
+
+
 
 

@@ -9,6 +9,21 @@ export const addGuineaPig = guinea_pig => (
 export const fetchGuineaPigs = memberId => (
   $.ajax ({
     method: 'GET',
-    url: `api/members/${memberId}/guinea_pigs`
+    url: `/api/members/${memberId}/guinea_pigs`
   })
-)
+);
+
+export const updateGuineaPig = guineaPig => (
+  $.ajax ({
+    method: 'PATCH',
+    url: `/api/guinea_pigs/${guineaPig.id}`,
+    data: { guineaPig }
+  })
+);
+
+export const removeGuineaPig = guineaPigId => (
+  $.ajax ({
+    method: 'DELETE',
+    url: `/api/guinea_pigs/${guineaPigId}`
+  })
+);

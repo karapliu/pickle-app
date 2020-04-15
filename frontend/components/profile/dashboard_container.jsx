@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Dashboard from './dashboard';
-import { fetchGuineaPigs } from '../../actions/guinea_pig_actions';
+import { fetchGuineaPigs, removeGuineaPig } from '../../actions/guinea_pig_actions';
 
 const mapStateToProps = state => ({
   currentMember: state.entities.members[state.session.currentMemberId],
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchGuineaPigs: memberId => dispatch(fetchGuineaPigs(memberId))
+  fetchGuineaPigs: memberId => dispatch(fetchGuineaPigs(memberId)),
+  removeGuineaPig: guineaPigId => dispatch(removeGuineaPig(guineaPigId))
 })
 
 export default connect(
