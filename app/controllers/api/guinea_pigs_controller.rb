@@ -5,6 +5,16 @@ class Api::GuineaPigsController < ApplicationController
     render 'api/guinea_pigs/index'
   end
 
+  def show
+    @guinea_pig = GuineaPig.find(params[:id])
+
+    if @guinea_pig
+      render 'api/guinea_pigs/show'
+    else
+      render json: ['Guinea Pig does not exist'], status: 404
+    end
+  end
+
   def create
     @guinea_pig = GuineaPig.new(guinea_pig_params)
     @guinea_pig.owner_id = current_member.id

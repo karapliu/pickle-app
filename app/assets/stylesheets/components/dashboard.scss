@@ -33,7 +33,7 @@
 .pickle-balance {
   background-color: #FFFFFF;
   padding: 20px 0px;
-  border-bottom: 2px solid #CFD7DD;
+  border-bottom: 3px solid #CFD7DD;
   border-radius: 6px;
   margin-bottom: 20px;
 }
@@ -167,13 +167,13 @@
   padding: 14px;
 }
 
-.d-pig-links a, button {
+.d-pig-links a, .d-pig-links button {
   font-size: 15px;
   margin-right: 8px;
   color: #6D8F54;
 }
 
-.d-pig-links a:hover, button:hover {
+.d-pig-links a:hover, .d-pig-links button:hover {
   text-decoration: underline;
 }
 

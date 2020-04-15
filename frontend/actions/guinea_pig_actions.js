@@ -36,12 +36,12 @@ export const fetchGuineaPigs = memberId => dispatch => (
     .then(guineaPigs => dispatch(receiveAllGuineaPigs(guineaPigs)))
 );
 
-export const updateGuineaPig = guineaPig => dispatch (
+export const updateGuineaPig = guineaPig => dispatch => (
   GuineaPigAPIUtil.updateGuineaPig(guineaPig)
     .then(guineaPig => dispatch(receiveGuineaPig(guineaPig)))
 );
 
-export const removeGuineaPig = guineaPigId => dispatch (
+export const removeGuineaPig = guineaPigId => dispatch => (
   GuineaPigAPIUtil.removeGuineaPig(guineaPigId)
     .then(() => dispatch(removeSingleGuineaPig(guineaPigId)))
 );

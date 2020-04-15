@@ -67,7 +67,7 @@ class UpdateYourPiggies extends React.Component {
   removeGPig(e) {
     e.preventDefault();
     this.props.removeGuineaPig(this.props.guineaPig.id)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/account/profile/your-piggies'));
   }
 
   render() {

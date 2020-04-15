@@ -20,23 +20,17 @@ class SignInForm extends React.Component {
     this.props.clearErrors();
   }
 
-  demoLogin() {
-    this.setState({
-      member: {
-        email: 'karaliu@email.com',
-        password: 'karapassword'
-      }
-    });
-
-    this.props.processForm(this.state)
-      .then(() => this.props.history.push('/'))
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.processForm({email: 'karaliu@email.com', password: 'karapassword'})
+      .then(() => this.props.history.push('/account'))
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const member = Object.assign({}, this.state.member);
     this.props.processForm(member)
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push('/account'))
   }
 
   update(field) {

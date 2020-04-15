@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :members_services, only: [:create, :update, :destroy]
-    resources :guinea_pigs, only: [:create, :update, :destroy]
+    resources :guinea_pigs, only: [:show, :create, :update, :destroy]
   end
 end
