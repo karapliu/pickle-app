@@ -263,4 +263,6 @@ rini_house_sitting = MembersService.create!({price: 40, member_id: rini.id, serv
 rini_drop_in_visits = MembersService.create!({price: 35, member_id: rini.id, service_id: drop_in_visits.id})
 rini_grooming = MembersService.create!({price: 10, member_id: rini.id, service_id: grooming.id})
 
+# BOOKINGS
+
 

@@ -1,1 +1,1 @@
-json.extract! :id, :start_time, :end_time, :owner_id, :sitter_id
+json.extract! :id, :start_time, :end_time, :owner_id, :members_service_id, :sitter_id, :message

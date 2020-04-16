@@ -12,7 +12,8 @@ class Service < ApplicationRecord
 
   has_many :ms,
     foreign_key: :service_id, 
-    class_name: :MembersService
+    class_name: :MembersService,
+    dependent: :destroy
 
   has_many :providers, 
     through: :ms, 

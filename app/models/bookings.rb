@@ -8,4 +8,8 @@ class Bookings < ApplicationRecord
   belongs_to :owner, 
     foreign_key: :owner_id, 
     class_name: :Member
+
+  belongs_to :service, 
+    foreign_key: :members_service_id, 
+    class_name: :MembersService
 end

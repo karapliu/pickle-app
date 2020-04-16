@@ -26,7 +26,8 @@ class Member < ApplicationRecord
 
   has_many :ms,
     foreign_key: :member_id, 
-    class_name: :MembersService
+    class_name: :MembersService,
+    dependent: :destroy
 
   has_many :services, 
     through: :ms, 
@@ -34,15 +35,18 @@ class Member < ApplicationRecord
 
   has_many :guinea_pigs, 
     foreign_key: :owner_id, 
-    class_name: :GuineaPig
+    class_name: :GuineaPig,
+    dependent: :destroy
 
-  belongs_to :job_booking,
+  has_many :job_bookings,
     foreign_key: :sitter_id, 
-    class_name: :Booking
+    class_name: :Booking,
+    dependent: :destroy
 
-  belongs_to :pet_booking, 
+  has_many :pet_bookings, 
     foreign_key: :owner_id, 
-    class_name: :Booking
+    class_name: :Booking, 
+    dependent: :destroy
 
   has_one_attached :profile_pic
   has_many_attached :photos

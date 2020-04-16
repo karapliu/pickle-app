@@ -20,4 +20,9 @@ class MembersService < ApplicationRecord
   belongs_to :service,
     foreign_key: :service_id, 
     class_name: :Service
+  
+  has_many :bookings, 
+    foreign_key: :members_service_id, 
+    class_name: :Booking,
+    dependent: :destroy
 end
