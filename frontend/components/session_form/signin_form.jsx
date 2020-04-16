@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class SignInForm extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class SignInForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillUnmount() {
@@ -37,27 +36,36 @@ class SignInForm extends React.Component {
     return e => this.setState({ member: {[field]: e.currentTarget.value }})
   }
 
-  renderErrors() {
-    const { errors } = this.props;
+  // renderErrors() {
+  //   const { errors } = this.props;
+
+  //   if (errors.length > 0) {
+  //     const errorsLis = errors.map((err, i) => (
+  //       <li key={`err-${i}`}>{err}</li>
+  //     ));
+
+  //     return (
+  //       <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} class="err-exit">x</button></ul>
+  //     )
+  //   }
+  // }
+
+  render() {
+    const { errors} = this.props;
+    let errorsUl = "";
 
     if (errors.length > 0) {
-
       const errorsLis = errors.map((err, i) => (
         <li key={`err-${i}`}>{err}</li>
       ));
-      
-      return (
-        <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} class="err-exit">x</button></ul>
-      )
-    }
-  }
 
-  render() {
+      errorsUl = <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} className="err-exit">x</button></ul>;
+    }
 
     return (
       <div className="session-form-container">
         <h1>Sign In to Pickle</h1>
-        {this.renderErrors()}
+        {errorsUl}
         <form className="session-form" onSubmit={this.handleSubmit}>
           <label className="session-form-label">
             Email
