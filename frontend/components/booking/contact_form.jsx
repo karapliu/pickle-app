@@ -6,12 +6,13 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: '',
-      startTime: '',
-      endDate: '',
-      endTime: '',
+      start_date: '',
+      start_time: '',
+      end_date: '',
+      end_time: '',
       message: '',
-      service_id: ''
+      service_id: '',
+      sitter_id: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,10 +20,19 @@ class ContactForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const booking = Object.assign({}, {['sitter_id']: this.props.sitter.id, ['members_service_id']: this.state.service_id, ['message']: this.state.message });
+    booking['start_date'] = this.state.start_date + ' ' + this.state.start_time;
+    booking['end_date'] = this.state.end_date + ' ' + this.state.end_time;
+    debugger;
+    this.props.processForm(booking);
   }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value })
+  }
+
+  handleService(id) {
+    this.setState({ ['service_id']: id })
   }
 
   componentDidMount() {
@@ -32,6 +42,7 @@ class ContactForm extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     const { sitter, currentMember, services, guineaPigs } = this.props;
 
     if (!sitter) {
@@ -62,7 +73,8 @@ class ContactForm extends React.Component {
           <label key={`c-serv-${id}`} className="contact-serv-item-container">
             <input
               type="radio"
-              name="service" />
+              name="service" 
+              onChange={() => this.handleService(id)} />
 
             <div className="contact-serv-item">
               <div>{icon()}</div>
@@ -128,7 +140,7 @@ class ContactForm extends React.Component {
               <div className="pos-relative">
                 <input 
                   type="date" 
-                  onChange={this.update('startDate')}
+                  onChange={this.update('start_date')}
                   />
                 <div className="i-datetime"><i className="far fa-calendar-alt"></i></div>
               </div>
@@ -138,7 +150,7 @@ class ContactForm extends React.Component {
                 <div className="pos-relative width-100">
                   <input 
                     type="time" 
-                    onChange={this.update('startTime')} 
+                    onChange={this.update('start_time')} 
                   />
                   <div className="i-datetime"><i className="far fa-clock"></i></div>
                 </div>
@@ -151,7 +163,7 @@ class ContactForm extends React.Component {
               <div className="pos-relative">
                 <input 
                   type="date" 
-                  onChange={this.update('endDate')} 
+                  onChange={this.update('end_date')} 
                   />
                 <div className="i-datetime"><i className="far fa-calendar-alt"></i></div>
               </div>
@@ -161,7 +173,7 @@ class ContactForm extends React.Component {
               <div className="pos-relative width-100">
                 <input 
                   type="time" 
-                  onChange={this.update('endTime')}
+                  onChange={this.update('end_time')}
                   />
                 <div className="i-datetime"><i className="far fa-clock"></i></div>
               </div>
@@ -174,7 +186,7 @@ class ContactForm extends React.Component {
             {allPets}
           </ul>
 
-          <Link className="c-add" to="/account/your-piggies"><i className="fas fa-plus-circle"></i> Add a piggy</Link>
+          <Link className="c-add" to="/account/profile/your-piggies"><i className="fas fa-plus-circle"></i> Add a piggy</Link>
 
           <h2>Message</h2>
           <p className="normal-font">Share a little info about your piggy and why they'd have a great time with {sitter.first_name}.</p>

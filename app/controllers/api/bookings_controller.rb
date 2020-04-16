@@ -1,12 +1,21 @@
 class Api::BookingsController < ApplicationController
   def create
+    # debugger
     @booking = Booking.new(booking_params)
+    debugger
     sitter = Member.find(params[:member_id])
-    members_service = MembersService.find_by(service_id: params[:service_id], member_id: sitter.id)
-    @booking.ms_id = members_service.id
-    @booking.owner_id = current_member
-    @booking.sitter_id = Member.find(params[:member_id])
-
+    debugger
+    members_service = MembersService.find_by({service_id: booking_params[:members_service_id], member_id: sitter.id})
+    debugger
+    @booking.members_service_id = members_service.id
+    debugger
+    @booking.owner_id = current_member.id
+    debugger
+    @booking.sitter_id = sitter.id
+    debugger
+    @booking.start_date = DateTime.parse(booking_params[:start_date])
+    @booking.end_date = DateTime.parse(booking_params[:end_date])
+    
     if @booking.save
       render 'api/bookings/show'
     else
@@ -17,6 +26,6 @@ class Api::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :service_id, :message)
+    params.require(:booking).permit(:start_date, :end_date, :members_service_id, :message)
   end
 end

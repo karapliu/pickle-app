@@ -15,6 +15,5 @@ const receiveErrors = errors => ({
 
 export const createBooking = booking => dispatch => (
   BookingAPIUtil.createBooking(booking)
-    .then(booking => dispatch(receiveBooking(booking)),
-    err => dispatch(receiveErrors(err)))
+    .then(booking => dispatch(receiveBooking(booking)))
 );
