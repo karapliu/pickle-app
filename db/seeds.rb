@@ -39,7 +39,7 @@ kara = Member.create!({
   email: "karaliu@email.com", 
   zipcode: 10001, 
   password: "karapassword", 
-  headline: "Your guinea pig's home away from home :)"
+  headline: "Your guinea pig's home away from home :)",
   about_me: "I love guinea pigs! I have a guinea pig named Pickle. She is 4 years old. I promise
    you your guinea pig will have the best time!", 
   hosting_max: 4
