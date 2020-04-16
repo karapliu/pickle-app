@@ -10,19 +10,20 @@
 .search-left {
   border: 1px solid blue;
   width: 22.99%;
-  height: 800px;
+  height: 750px;
 }
 
 .search-middle {
   border: 1px solid blue;
   width: 44.99%;
-  height: 800px;
+  height: 750px;
+  overflow: scroll;
 }
 
 .search-right {
   border: 1px solid blue;
   width: 31.99%;
-  height: 800px;
+  height: 750px;
 }
 
 .search-item {
