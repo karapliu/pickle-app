@@ -68,7 +68,7 @@ niki = Member.create!({
   email: "niki@email.com",
   zipcode: 10015,
   password: "nikipassword",
-  headline: "Owner of 9 piggies!"
+  headline: "Owner of 9 piggies!",
   about_me: "Recent college grad! Currently work 9-5 at a financial media group, fun, young professional in the city. Highly 
   responsible and will cater to your pet’s needs, great at reading pet language and making sure they are comfortable. 
   A huge priority is cleanliness for me especially being in nyc. Please let me know if there are additional issues or 
