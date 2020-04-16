@@ -51,7 +51,7 @@ class App extends React.Component {
   };
 
   render () {
-    const search = location.hash === "#/" ? <Link className={this.navLinksClass()} to="/search"><i className="fas fa-search"></i> Search Sitters</Link> : <><input className="nav-search" type="text" placeholder="Zip Code" /><button className="nav-search-submit" type="submit"><i className="fas fa-search"></i></button></>;
+    const search = location.hash === "#/search" ? <><input className="nav-search" type="text" placeholder="Zip Code" /><button className="nav-search-submit" type="submit"><i className="fas fa-search"></i></button></> : <Link className={this.navLinksClass()} to="/search"><i className="fas fa-search"></i> Search Sitters</Link>;
 
     return (
     <>

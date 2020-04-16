@@ -12,7 +12,6 @@ class Dashboard extends React.Component {
   }
 
   removeGPig(guineaPigId) {
-    debugger;
     this.props.removeGuineaPig(guineaPigId)
       .then(() => this.props.history.push('/account'))
   }

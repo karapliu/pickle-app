@@ -4,9 +4,9 @@ const SearchItem = ({ member, num }) => {
   return (
     <div className="search-item">
       <div className="search-img">
-        <img src={member.photoUrl === "" ? window.paw : member.photoUrl} />
+        <img className={member.photoUrl === "" ? 'bg-green' : ''} src={member.photoUrl === "" ? window.paw : member.photoUrl} />
       </div>
-      <h1>{num}. {member.first_name}</h1>
+      <h1>{num}. <span class="search-item-name">{member.first_name}</span></h1>
     </div>
   )
 }

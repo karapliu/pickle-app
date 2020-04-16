@@ -8,7 +8,6 @@ class Search extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { members } = this.props;
 
     if (!members) {

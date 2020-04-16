@@ -4,7 +4,7 @@
 }
 
 .search-page-container h1 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .search-left {
@@ -28,9 +28,9 @@
 .search-item {
   display: flex;
   padding: 15px;
-  margin: 5px;
   background-color: white;
   border-left: 4px solid transparent;
+  border-bottom: 1px solid lightgrey;
 }
 
 .search-item:hover {
@@ -40,4 +40,23 @@
 .search-img {
   width: 150px;
   height: 150px;
+  overflow: hidden;
+  position: relative;
+  margin-right: 20px;
+}
+
+.search-img img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 0;
+}
+
+.search-item-name {
+  color: #265936;
+  font-size: 28px;
+  font-weight: 500;
 }
