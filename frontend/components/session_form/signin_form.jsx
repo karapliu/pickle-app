@@ -39,13 +39,13 @@ class SignInForm extends React.Component {
 
   renderErrors() {
     const { errors } = this.props;
-    if (errors) {
+
+    if (errors.length > 0) {
+
       const errorsLis = errors.map((err, i) => (
         <li key={`err-${i}`}>{err}</li>
       ));
-    }
-
-    if (errors.length > 0) {
+      
       return (
         <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} class="err-exit">x</button></ul>
       )
