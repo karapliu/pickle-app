@@ -1,14 +1,16 @@
 import React from 'react';
 import HostingPigs from './hosting-pigs';
+import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
   componentDidMount() {
     this.props.fetchMember(this.props.match.params.memberId);
     this.props.fetchServices(this.props.match.params.memberId);
+    this.props.fetchGuineaPigs(this.props.match.params.memberId)
   }
 
   render() {
-    const { member } = this.props;
+    const { member, guineaPigs } = this.props;
 
     if (!member) {
       return null;
@@ -28,7 +30,26 @@ class Profile extends React.Component {
         return "";
       }
     })
-  
+
+    const allPiggies = member.guinea_pig_ids.map(pigId => {
+      const gPig = guineaPigs[pigId];
+
+      if (gPig) {
+        if (gPig.photoUrl === "") {
+          return <div className="p-pig bg-green">
+            <img src={window.paw} />
+            <h2 className="p-pig-name">{gPig.name}</h2>
+          </div>
+        } else {
+          return <div className="p-pig">
+            <img src={gPig.photoUrl} />
+            <h2 className="p-pig-name">{gPig.name}</h2>
+          </div>
+        }
+      } else {
+        return '';
+      }
+    })
 
     return (
       <div className="profile">
@@ -41,6 +62,10 @@ class Profile extends React.Component {
             <div className="profile-header-info">
               <h1 className="prof-h1">{member.first_name} {lastInitial}.</h1>
               <h4 className="prof-h4">{member.zipcode}</h4>
+              <div className="profile-response">
+                <p><i className="far fa-comments"></i> <span className="grey">Response Rate:</span> 100%</p>
+                <p><i className="far fa-clock"></i> <span className="grey">Response Time:</span> within an hour</p>
+              </div>
               <button className="contact-button">Contact {member.first_name}</button>
             </div>
           </div>
@@ -68,10 +93,20 @@ class Profile extends React.Component {
             <div className="prof-middle">
               <div className="about-me">
                 <h3 className="prof-h3">About {member.first_name}</h3>
+                <h2 className="prof-headline">{member.headline}</h2>
                 <p>{member.about_me}</p>
               </div>
+
+              <h3 className="prof-h3">{member.first_name}'s Piggies</h3>
+              <div className="d-your-piggies">{allPiggies}</div>
             </div>
-            <div className="prof-right"></div>
+            <div className="prof-right">
+              <div className="right-box">
+                <div className="right-box-icon"><i className="fas fa-images"></i></div>
+                <h4>100%</h4>
+                <p>of clients received photo updates</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

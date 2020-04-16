@@ -9,6 +9,7 @@ const SearchItem = ({ member, num }) => {
       </div>
       <div className="flex-column">
         <h1>{num}. <span className="search-item-name">{member.first_name}</span></h1>
+        <span className="headline">{member.headline}</span>
         <p>{member.zipcode}</p>
       </div>
     </div>

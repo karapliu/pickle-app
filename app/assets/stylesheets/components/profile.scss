@@ -17,6 +17,17 @@
   border-radius: 50%;
   margin: 40px;
   overflow: hidden;
+  position: relative;
+}
+
+.profile-photo img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 0;
 }
 
 .profile-header-info {
@@ -35,7 +46,7 @@
 
 .contact-button {
   display: block;
-  width: 100%;
+  width: 140px;
   height: 45px;
   background-color: #83A05C;
   border: #83A05C;
@@ -44,6 +55,10 @@
   border-radius: 5px;
   margin-top: 20px;
   text-align: center;
+}
+
+.contact-button:hover {
+  background-color: #265936;
 }
 
 .profile-content {
@@ -80,12 +95,12 @@
 }
 
 .prof-middle {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 540px;
 }
 
 .prof-right {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 140px;
 }
 
@@ -129,6 +144,99 @@
   border-radius: 6px;
 }
 
-.about_me p {
-  font-size: 11px;
+.about-me {
+  margin-bottom: 30px;
+}
+
+.about-me p {
+  font-size: 14px;
+}
+
+.profile-response {
+  display: flex;
+  width: 110%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.profile-response p {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-response i {
+  color: #6D8F54;
+}
+
+.prof-headline {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.p-pig {
+  width: 48%;
+  display: block;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #CFD7DD;
+  border-bottom: 3px solid #CFD7DD;
+  margin: 15px 6px 10px 0px;
+}
+
+.p-pig img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 0;
+}
+
+.p-pig-name {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 13px;
+  text-shadow: 0 1px 5px rgba(0,0,0,.6);
+}
+
+.right-box {
+  padding: 8px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  position: relative;
+}
+
+.right-box h4 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.right-box p {
+  font-size: 12px;
+  color: grey;
+}
+
+.right-box-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  background-color: #265936;
+  padding: 10px;
+  border-radius: 50%;
+  top: -20px;
+  right: 7px;
 }
