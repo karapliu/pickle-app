@@ -5,11 +5,8 @@ class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      member: {
-        email: '',
-        password: ''
-      },
-      errors: false
+      email: '',
+      password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -27,13 +24,13 @@ class SignInForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const member = Object.assign({}, this.state.member);
+    const member = Object.assign({}, this.state);
     this.props.processForm(member)
       .then(() => this.props.history.push('/account'))
   }
 
   update(field) {
-    return e => this.setState({ member: {[field]: e.currentTarget.value }})
+    return e => this.setState({ [field]: e.currentTarget.value })
   }
 
   // renderErrors() {
@@ -72,7 +69,7 @@ class SignInForm extends React.Component {
             <input
               type="email"
               onChange={this.update('email')}
-              value={this.state.member.email}
+              value={this.state.email}
               className="session-form-input" />
           </label>
 
@@ -81,7 +78,7 @@ class SignInForm extends React.Component {
             <input
               type="password"
               onChange={this.update('password')}
-              value={this.state.member.password}
+              value={this.state.password}
               className="session-form-input" />
           </label>
 
