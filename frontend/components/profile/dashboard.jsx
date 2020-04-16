@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { currentMember, guineaPigs, removeGuineaPig } = this.props;
+    const { currentMember, guineaPigs } = this.props;
     const allPiggies = currentMember.guinea_pig_ids.map(pigId => {
       const gPig = guineaPigs[pigId];
 
@@ -47,7 +47,9 @@ class Dashboard extends React.Component {
         return '';
       }
     })
+
     const lastInitial = currentMember.last_name.slice(0, 1);
+    
     return (
       <>
       <div className="dashboard-container">

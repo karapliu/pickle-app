@@ -39,9 +39,11 @@ class SignInForm extends React.Component {
 
   renderErrors() {
     const { errors } = this.props;
-    const errorsLis = errors.map((err, i) => (
-      <li key={`err-${i}`}>{err}</li>
-    ));
+    if (errors) {
+      const errorsLis = errors.map((err, i) => (
+        <li key={`err-${i}`}>{err}</li>
+      ));
+    }
 
     if (errors.length > 0) {
       return (
