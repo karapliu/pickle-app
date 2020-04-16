@@ -42,7 +42,7 @@ class SignInForm extends React.Component {
   //     ));
 
   //     return (
-  //       <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} class="err-exit">x</button></ul>
+  //       <ul className='signin-errors'>{errorsLis}<button onClick={() => this.props.clearErrors()} className="err-exit">x</button></ul>
   //     )
   //   }
   // }

@@ -68,37 +68,25 @@
   border: 1px solid lightgrey;
   border-radius: 4px;
   padding: 5px 0px 5px 5px;
-  height: 30px;
-  width: 95%;
+  height: 45px;
+  width: 97%;
   font-size: 14px;
-  margin-right: 10px;
+  box-sizing: border-box;
 }
 
-.time-flex input[type="time"]:focus, input[type="date"]:focus {
+input[type="time"]:focus, input[type="date"]:focus {
   outline: none;
   border: 1px solid #06748A;
 }
 
-.time-flex input[type="time"] {
-  height: 30px;
-  width: 95%;
+input[type="time"] {
+  height: 45px;
+  width: 97%;
   border: 1px solid lightgrey;
   padding: 5px 0px 5px 5px;
   font-size: 14px;
-}
-
-.time-flex .pos-relative:first-child input[type="time"] {
-  border-right: none;
-  border-radius: 4px 0px 0px 4px;
-}
-
-.time-flex .pos-relative:last-child input[type="time"] {
-  border-radius: 0px 4px 4px 0px;
-}
-
-.time-flex {
-  width: 100%;
-  display: flex;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .contact-form-container .normal-font {
@@ -198,5 +186,14 @@
 
 .contact-form-submit:hover {
   background-color: #265936;
+}
+
+.i-datetime {
+  font-size: 17px;
+  position: absolute;
+  top: 23%;
+  color: lightgrey;
+  right: 20px;
+  cursor: pointer;
 }
 

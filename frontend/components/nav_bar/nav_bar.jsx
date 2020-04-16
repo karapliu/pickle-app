@@ -25,7 +25,7 @@ class NavBar extends React.Component {
     const loggedIn = () => (
       <>
         <div className="logged-in-links">
-          <Dropdown logout={logout} currentMember={currentMember} navLinksClass={this.navLinksClass} />
+          <Dropdown logout={logout} currentMember={currentMember} navLinksclassName={this.navLinksClass} />
         </div>
       </>
     );

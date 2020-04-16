@@ -1,5 +1,5 @@
 import React from 'react';
-import ContactFormServItem from './contact_form_serv_item';
+// import ContactFormServItem from './contact_form_serv_item';
 import { Link } from 'react-router-dom';
 
 class ContactForm extends React.Component {
@@ -7,10 +7,24 @@ class ContactForm extends React.Component {
     super(props);
     this.state = {
       startDate: '',
+      startTime: '',
       endDate: '',
-      message: ''
+      endTime: '',
+      message: '',
+      service_id: ''
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  update(field) {
+    return e => this.setState({ [field]: e.currentTarget.value })
+  }
+
   componentDidMount() {
     this.props.fetchMember(this.props.match.params.memberId)
     this.props.fetchServices(this.props.match.params.memberId)
@@ -24,12 +38,37 @@ class ContactForm extends React.Component {
       return null;
     }
     
+    
     const allServices = sitter.service_ids.map(id => {
       let serv = services[id];
 
       if (serv) {
+        const icon = () => {
+          switch (serv.name) {
+            case "Guinea Pig Boarding":
+              return <i className="fas fa-suitcase"></i>;
+            case "House Sitting":
+              return <i className="fas fa-home"></i>;
+            case "Drop-In Visits":
+              return <i className="fas fa-carrot"></i>;
+            case "Guinea Pig Day Care":
+              return <i className="fas fa-sun"></i>;
+            case "Guinea Pig Grooming":
+              return <img src={window.paw} />;
+          }
+        };
+
         return (
-          <ContactFormServItem key={`c-serv-${id}`} serv={serv} />
+          <label key={`c-serv-${id}`} className="contact-serv-item-container">
+            <input
+              type="radio"
+              name="service" />
+
+            <div className="contact-serv-item">
+              <div>{icon()}</div>
+              <div>{serv.name}</div>
+            </div>
+          </label>
         )
       }
     });
@@ -77,32 +116,32 @@ class ContactForm extends React.Component {
 
     return(
       <div className="white-bg">
-        <div className="contact-form-container">
+        <form onSubmit={this.handleSubmit} className="contact-form-container">
           <h1>Contact {sitter.first_name}</h1>
           <div className="contact-serv-container">
             {allServices}
           </div>
-
+          
           <div className="flex-row space-between">
             <div className="flex-column width-100">
               <p>When would you like to drop off?</p>
               <div className="pos-relative">
-                <input type="date" />
-                <div className="i-calendar"><i className="far fa-calendar-alt"></i></div>
+                <input 
+                  type="date" 
+                  onChange={this.update('startDate')}
+                  />
+                <div className="i-datetime"><i className="far fa-calendar-alt"></i></div>
               </div>
             </div>
             <div className="flex-column width-100">
-              <p>Between what times?</p>
-              <div className="time-flex">
+              <p>At what time?</p>       
                 <div className="pos-relative width-100">
-                  <input type="time" />
-                  <div className="i-calendar"><i className="far fa-clock"></i></div>
+                  <input 
+                    type="time" 
+                    onChange={this.update('startTime')} 
+                  />
+                  <div className="i-datetime"><i className="far fa-clock"></i></div>
                 </div>
-                <div className="pos-relative width-100">
-                  <input type="time" />
-                  <div className="i-calendar"><i className="far fa-clock"></i></div>
-                </div>
-              </div>
             </div>
           </div>
           
@@ -110,21 +149,21 @@ class ContactForm extends React.Component {
             <div className="flex-column width-100">
               <p>When would you like to pick up?</p>
               <div className="pos-relative">
-                <input type="date" />
-                <div className="i-calendar"><i className="far fa-calendar-alt"></i></div>
+                <input 
+                  type="date" 
+                  onChange={this.update('endDate')} 
+                  />
+                <div className="i-datetime"><i className="far fa-calendar-alt"></i></div>
               </div>
             </div>
             <div className="flex-column width-100">
-              <p>Between what times?</p>
-              <div className="time-flex">
-                <div className="pos-relative width-100">
-                  <input type="time" />
-                  <div className="i-calendar"><i className="far fa-clock"></i></div>
-                </div>
-                <div className="pos-relative width-100">
-                  <input type="time" />
-                  <div className="i-calendar"><i className="far fa-clock"></i></div>
-                </div>
+              <p>At what time?</p>
+              <div className="pos-relative width-100">
+                <input 
+                  type="time" 
+                  onChange={this.update('endTime')}
+                  />
+                <div className="i-datetime"><i className="far fa-clock"></i></div>
               </div>
             </div>
           </div>
@@ -135,17 +174,18 @@ class ContactForm extends React.Component {
             {allPets}
           </ul>
 
-          <Link className="c-add" to="/account/your-piggies"><i class="fas fa-plus-circle"></i> Add a piggy</Link>
+          <Link className="c-add" to="/account/your-piggies"><i className="fas fa-plus-circle"></i> Add a piggy</Link>
 
           <h2>Message</h2>
           <p className="normal-font">Share a little info about your piggy and why they'd have a great time with {sitter.first_name}.</p>
           <textarea
             className="contact-textarea"
-            rows='5' />
+            rows='5' 
+            onChange={this.update('message')}/>
           
           <div className="terms">No payment required per Pickle's Terms of Service.</div>
           <button className="contact-form-submit" type="submit">Send</button>
-        </div>
+        </form>
       </div>
     )
   }
