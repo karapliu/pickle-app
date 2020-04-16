@@ -1,6 +1,7 @@
 class Api::GuineaPigsController < ApplicationController
   def index
-    @guinea_pigs = current_member.guinea_pigs
+    @member = Member.find(params[:member_id])
+    @guinea_pigs = @member.guinea_pigs
 
     render 'api/guinea_pigs/index'
   end

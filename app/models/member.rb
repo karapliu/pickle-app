@@ -36,6 +36,14 @@ class Member < ApplicationRecord
     foreign_key: :owner_id, 
     class_name: :GuineaPig
 
+  belongs_to :job_booking,
+    foreign_key: :sitter_id, 
+    class_name: :Booking
+
+  belongs_to :pet_booking, 
+    foreign_key: :owner_id, 
+    class_name: :Booking
+
   has_one_attached :profile_pic
   has_many_attached :photos
 

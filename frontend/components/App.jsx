@@ -18,6 +18,7 @@ import UpdateYourPiggiesContainer from './update_profile/your_piggies/update_you
 import EditGuineaPigContainer from './update_profile/your_piggies/edit_guinea_pig_container';
 import GuineaPigContainer from './guinea_pig/guinea_pig_container';
 import SearchContainer from './search/search_container';
+import ContactFormContainer from './booking/contact_form_container';
 
 class App extends React.Component {
   // now you can check out props to access route information.
@@ -70,6 +71,7 @@ class App extends React.Component {
         <AuthRoute exact path="/signup" component={SignUpFormContainer} />
         <AuthRoute exact path="/signin" component={SignInFormContainer} />
         <Route exact path="/members/:memberId" component={ProfileContainer} />
+        <ProtectedRoute path="/members/:memberId/contact" component={ContactFormContainer} />
         <ProtectedRoute exact path="/account" component={DashboardContainer} />
         <ProtectedRoute path="/account/profile/account-info" component={AccountInfoContainer} />
         <ProtectedRoute path="/account/profile/details" component={DetailsContainer} />

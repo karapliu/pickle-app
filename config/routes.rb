@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :members, only: [:index, :create, :show, :update] do 
       resources :members_services, only: [:index]
       resources :guinea_pigs, only: [:index]
+      resources :bookings, only: [:create]
     end
     resource :session, only: [:create, :destroy]
     patch 'members_services/update', to: 'members_services#mass_update'

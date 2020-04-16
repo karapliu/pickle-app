@@ -66,7 +66,7 @@ class Profile extends React.Component {
                 <p><i className="far fa-comments"></i> <span className="grey">Response Rate:</span> 100%</p>
                 <p><i className="far fa-clock"></i> <span className="grey">Response Time:</span> within an hour</p>
               </div>
-              <button className="contact-button">Contact {member.first_name}</button>
+              <Link to={`/members/${member.id}/contact`}><button className="contact-button">Contact {member.first_name}</button></Link>
             </div>
           </div>
 

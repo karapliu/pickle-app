@@ -1,0 +1,1 @@
+json.extract! :id, :start_time, :end_time, :owner_id, :sitter_id
