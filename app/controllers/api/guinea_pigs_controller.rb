@@ -7,7 +7,7 @@ class Api::GuineaPigsController < ApplicationController
 
   def show
     @guinea_pig = GuineaPig.find(params[:id])
-
+    
     if @guinea_pig
       render 'api/guinea_pigs/show'
     else

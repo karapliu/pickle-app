@@ -1,0 +1,43 @@
+.search-page-container {
+  width: 100%;
+  display: flex;
+}
+
+.search-page-container h1 {
+  font-size: 30px;
+}
+
+.search-left {
+  border: 1px solid blue;
+  width: 22.99%;
+  height: 800px;
+}
+
+.search-middle {
+  border: 1px solid blue;
+  width: 44.99%;
+  height: 800px;
+}
+
+.search-right {
+  border: 1px solid blue;
+  width: 31.99%;
+  height: 800px;
+}
+
+.search-item {
+  display: flex;
+  padding: 15px;
+  margin: 5px;
+  background-color: white;
+  border-left: 4px solid transparent;
+}
+
+.search-item:hover {
+  border-left: 4px solid #265936;
+}
+
+.search-img {
+  width: 150px;
+  height: 150px;
+}

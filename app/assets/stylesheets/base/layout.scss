@@ -29,6 +29,10 @@
    justify-content: space-between;
  }
 
+ .space-around {
+   justify-content: space-around;
+ }
+
  .jus-center {
    justify-content: center;
  }
@@ -55,6 +59,10 @@
 
  .med-green {
   color: #83A05C;
+}
+
+.bg-green {
+  background-color: #83A05C;
 }
 
  .clearfix::after {

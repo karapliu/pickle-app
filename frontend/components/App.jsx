@@ -51,13 +51,15 @@ class App extends React.Component {
   };
 
   render () {
+    const search = location.hash === "#/" ? <Link className={this.navLinksClass()} to="/search"><i className="fas fa-search"></i> Search Sitters</Link> : <><input className="nav-search" type="text" placeholder="Zip Code" /><button className="nav-search-submit" type="submit"><i className="fas fa-search"></i></button></>;
+
     return (
     <>
       <header className={this.headerClass()}>
         <nav className="nav-bar">
           <div className="left-nav">
-            <div className="main-logo"><Link to="/"><img src={this.titleClass()} /></Link></div>
-              <Link className={this.navLinksClass()} to="/"><i className="fas fa-search"></i> Search Sitters</Link>
+            <div className="main-logo"><Link to="/" title="Home"><img src={this.titleClass()} /></Link></div>
+            {search}
             <Link className={this.navLinksClass()} to="/signup"><i className="far fa-heart"></i> Become a Sitter</Link>
           </div>
           <NavBarContainer />
@@ -76,7 +78,7 @@ class App extends React.Component {
         <ProtectedRoute exact path="/account/profile/your-piggies" component={UpdateYourPiggiesContainer} />
         <ProtectedRoute path="/account/profile/your-piggies/:guineaPigId" component={EditGuineaPigContainer} />
         <ProtectedRoute path="/account/guinea-pigs/:guineaPigId" component={GuineaPigContainer} />
-        {/* <Route path= */}
+        <Route path="/search" component={SearchContainer} />
         <Route exact path="/" component={Home} />
       </Switch> 
 

@@ -38,7 +38,7 @@
 .left-nav {
   display: flex;
   align-items: center;
-  width: 400px;
+  width: 50%;
 }
 
 .title a {
@@ -90,5 +90,24 @@
 .logged-in-links {
   display: flex;
   align-items: center;
+}
+
+.nav-search {
+  border: 1px solid lightgrey;
+  padding: 5px 5px 5px 10px;
+  font-size: 12px;
+  border-radius: 4px 0px 0px 4px;
+  box-sizing: border-box;
+  height: 30px;
+}
+
+.nav-search-submit {
+  font-size: 12px;
+  color: white;
+  background-color: #265936;
+  padding: 0px 10px 0px 7px;
+  height: 30px;
+  border-radius: 0px 4px 4px 0px;
+  margin-right: 10px;
 }
 

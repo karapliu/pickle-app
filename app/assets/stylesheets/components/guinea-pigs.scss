@@ -1,6 +1,75 @@
 .guinea-pig-container {
-  margin: auto;
   width: 610px;
-  height: 800px;
+  height: 750px;
   background-color: white;
+  border-radius: 20px;
+  border: 4px dashed #265936;
+  font-family: 'Gaegu', cursive;
+}
+
+.guinea-pig-container h1 {
+  color: #265936;
+  text-align: center;
+  font-size: 120px;
+}
+
+.guinea-pig-container h5 {
+  color: #265936;
+  font-size: 40px;
+}
+
+.guinea-pig-container p {
+  font-size: 35px;
+}
+
+.guinea-pig-photo {
+  width: 500px;
+  height: 500px;
+  box-shadow: 10px 10px 8px #CFD7DD;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.guinea-pig-photo img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  z-index: 0;
+}
+
+.guinea-pig-info {
+  margin-top: 30px;
+}
+
+.guinea-pig-view-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #6D8F54;
+  font-size: 30px;
+  width: 20px;
+  height: 90px;
+  position: sticky;
+  position: -webkit-sticky;
+  padding: 40px 30px 0px 0px;
+  top: 0;
+}
+
+.guinea-pig-view-links button {
+  font-size: 30px;
+}
+
+.guinea-pig-view-links a:hover, .guinea-pig-view-links button:hover {
+  color: #265936;
+}
+
+.guinea-pig-view-content {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px;
 }

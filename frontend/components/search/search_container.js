@@ -3,7 +3,7 @@ import Search from './search';
 import { fetchMembers } from '../../actions/member_actions';
 
 const mapStateToProps = state => ({
-  members: state.entities.members
+  members: Object.values(state.entities.members)
 });
 
 const mapDispatchToProps = dispatch => ({
