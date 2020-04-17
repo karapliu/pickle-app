@@ -17,7 +17,7 @@ class Api::BookingsController < ApplicationController
     @member = Member.find(current_member.id)
     @pet_bookings = @member.pet_bookings
     @job_bookings = @member.job_bookings
-    # debugger
+
     render 'api/bookings/index'
   end
 
