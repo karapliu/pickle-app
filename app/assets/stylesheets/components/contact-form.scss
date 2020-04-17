@@ -22,8 +22,9 @@
 }
 
 .contact-serv-item-container {
-  flex: 1;
-  width: 0;
+  flex: 0 1 auto;
+  // width: 0;
+  // align-self: stretch;
 }
 
 .contact-serv-item {
