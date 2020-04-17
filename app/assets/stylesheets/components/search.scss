@@ -162,6 +162,7 @@
 .search-item p {
   font-size: 12px;
   font-weight: 900;
+  margin-top: 10px;
 }
 
 .headline {
@@ -192,3 +193,24 @@
   font-size: 28px;
   font-weight: 500;
 }
+
+.search-right {
+  width: 32.99%;
+  height: 750px;
+  border-left: 1px solid lightgrey;
+  position: relative;
+  // overflow: hidden;
+  background-image: image-url("map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// .search-right img {
+//   position: absolute;
+//   top: -9999px;
+//   bottom: -9999px;
+//   left: -9999px;
+//   right: -9999px;
+//   margin: auto;
+//   z-index: 0;
+// }

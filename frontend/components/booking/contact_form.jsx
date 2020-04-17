@@ -12,7 +12,8 @@ class ContactForm extends React.Component {
       end_time: '',
       message: '',
       service_id: '',
-      sitter_id: ''
+      sitter_id: '',
+      owner_id: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,11 +21,12 @@ class ContactForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const booking = Object.assign({}, {['sitter_id']: this.props.sitter.id, ['members_service_id']: this.state.service_id, ['message']: this.state.message });
+    const booking = Object.assign({}, {['owner_id']: this.props.currentMember.id, ['sitter_id']: this.props.sitter.id, ['members_service_id']: this.state.service_id, ['message']: this.state.message });
     booking['start_date'] = this.state.start_date + ' ' + this.state.start_time;
     booking['end_date'] = this.state.end_date + ' ' + this.state.end_time;
-    debugger;
-    this.props.processForm(booking);
+
+    this.props.processForm(booking)
+      .then(() => this.props.history.push('/account'))
   }
 
   update(field) {
@@ -42,7 +44,6 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const { sitter, currentMember, services, guineaPigs } = this.props;
 
     if (!sitter) {
@@ -151,7 +152,6 @@ class ContactForm extends React.Component {
                   <input 
                     type="time" 
                     onChange={this.update('start_time')} 
-                    value="00:00"
                   />
                   <div className="i-datetime"><i className="far fa-clock"></i></div>
                 </div>
@@ -175,7 +175,6 @@ class ContactForm extends React.Component {
                 <input 
                   type="time" 
                   onChange={this.update('end_time')}
-                  value="00:00"
                   />
                 <div className="i-datetime"><i className="far fa-clock"></i></div>
               </div>

@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     patch 'members_services/update', to: 'members_services#mass_update'
     resources :members_services, only: [:create, :update, :destroy]
     resources :guinea_pigs, only: [:show, :create, :update, :destroy]
+    resources :bookings, only: [:index]
   end
 end

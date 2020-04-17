@@ -176,6 +176,39 @@
   text-decoration: underline;
 }
 
+.job-book {
+  width: 100%;
+  border: 1px solid lightgrey;
+  // padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.job-book img {
+  width: 80px;
+  border-radius: 8px 0px 0px 8px;
+}
+
+.job-book .booking-name {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 7px 0px 5px 10px;
+}
+
+.job-book p {
+  margin-left: 10px;
+}
+
+.booking-date {
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  color: #265936;
+}
 
 
 

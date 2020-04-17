@@ -1,16 +1,16 @@
-import { RECEIVE_ERRORS, RECEIVE_BOOKING } from '../actions/booking_actions';
+// import { RECEIVE_ERRORS, RECEIVE_BOOKING } from '../actions/booking_actions';
 
-const bookingErrorsReducer = (state = [], action) => {
-  Object.freeze(state);
+// const bookingErrorsReducer = (state = [], action) => {
+//   Object.freeze(state);
 
-  switch (action.type) {
-    case RECEIVE_ERRORS:
-      return action.errors;
-    case RECEIVE_BOOKING:
-      return [];
-    default:
-      return state;
-  }
-};
+//   switch (action.type) {
+//     case RECEIVE_ERRORS:
+//       return action.errors;
+//     case RECEIVE_BOOKING:
+//       return [];
+//     default:
+//       return state;
+//   }
+// };
 
-export default bookingErrorsReducer;
+// export default bookingErrorsReducer;

@@ -61,7 +61,7 @@ class Search extends React.Component {
                 </div>
                 <i className="fas fa-long-arrow-alt-right arrow"></i>
                 <div className="two-input-input">
-                  <input type="text" placeholder="Min" />
+                  <input type="text" placeholder="Max" />
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ class Search extends React.Component {
         </div>
 
         <div className="search-right">
-
+          {/* <img src={window.map} /> */}
         </div>
       </div>
     )

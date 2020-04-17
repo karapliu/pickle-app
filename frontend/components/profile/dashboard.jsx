@@ -8,7 +8,9 @@ class Dashboard extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchMembers();
     this.props.fetchGuineaPigs(this.props.currentMember.id);
+    this.props.fetchBookings();
   }
 
   removeGPig(guineaPigId) {
@@ -17,13 +19,22 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { currentMember, guineaPigs } = this.props;
+    const { currentMember, guineaPigs, bookings, members } = this.props;
+
+    if (!currentMember) {
+      return null;
+    }
+
+    if (!members) {
+      return null;
+    }
+
     const allPiggies = currentMember.guinea_pig_ids.map(pigId => {
       const gPig = guineaPigs[pigId];
 
       if (gPig) {
         if (gPig.photoUrl === "") {
-          return <div className="d-pig bg-green">
+          return <div key={`dg-${pigId}`} className="d-pig bg-green">
             <img src={window.paw} />
             <h2 className="d-pig-name">{gPig.name}</h2>
             <div className="d-pig-links flex-row space-between">
@@ -33,7 +44,7 @@ class Dashboard extends React.Component {
             </div>
           </div>
         } else {
-          return <div className="d-pig">
+          return <div key={`dg-${pigId}`} className="d-pig">
             <img src={gPig.photoUrl} />
             <h2 className="d-pig-name">{gPig.name}</h2>
             <div className="d-pig-links flex-row space-between">
@@ -49,6 +60,58 @@ class Dashboard extends React.Component {
     })
 
     const lastInitial = currentMember.last_name.slice(0, 1);
+
+    const jobBookings = currentMember.job_booking_ids.map(id => {
+      let book = bookings[id];
+
+      if (book) {
+        if (members[book.owner_id]) {
+          let owner = members[book.owner_id];
+          let startDate = new Date(book.start_date);
+          let endDate = new Date(book.end_date)
+          return (
+            <li className="job-book flex-row" key={`job-${id}`}>
+              <img src={owner.photoUrl} />
+              <div className="flex-column">
+                <Link className="booking-name" to={`/members/${owner.id}`}>{owner.first_name}</Link>
+                <p>{book.message}</p>
+              </div>
+              <div className="booking-date">
+                {startDate.getMonth()}/{startDate.getDate()} - {endDate.getMonth()}/{endDate.getDate()}
+              </div>
+            </li>
+          )
+        } else {
+          return "";
+        }
+      }
+    })
+
+    const petBookings = currentMember.pet_booking_ids.map(id => {
+      let book = bookings[id];
+
+      if (book) {
+        if (members[book.sitter_id]) {
+          let sitter = members[book.sitter_id];
+          let startDate = new Date(book.start_date);
+          let endDate = new Date(book.end_date)
+          return (
+            <li className="job-book flex-row" key={`job-${id}`}>
+              <img src={sitter.photoUrl} />
+              <div className="flex-column">
+                <Link className="booking-name" to={`/members/${sitter.id}`}>{sitter.first_name}</Link>
+                <p>{book.message}</p>
+              </div>
+              <div className="booking-date">
+                {startDate.getMonth()}/{startDate.getDate()} - {endDate.getMonth()}/{endDate.getDate()}
+              </div>
+            </li>
+          )
+        } else {
+          return "";
+        }
+      }
+    })
     
     return (
       <>
@@ -89,6 +152,15 @@ class Dashboard extends React.Component {
           </div>
 
           <div className="dashboard-right">
+            <div className="dashboard-box">
+              <h2>Upcoming Stays</h2>
+              <ul className="job-bookings">{jobBookings}</ul>
+            </div>
+
+            <div className="dashboard-box">
+              <h2>Upcoming Bookings</h2>
+              <ul className="job-bookings">{petBookings}</ul>
+            </div>
             <div className="dashboard-box">
               <h2>Your Guinea Pigs</h2>
               <p>Add your guinea pigs or edit their information</p>
