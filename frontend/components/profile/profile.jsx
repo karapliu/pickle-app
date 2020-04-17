@@ -19,7 +19,6 @@ class Profile extends React.Component {
     const lastInitial = this.props.member.last_name.slice(0, 1)
     
     const allServices = member.service_ids.map(service_id => {
-      // const serv = typeof services[0] == undefined ? services[0][service_id] : null ;
       const serv = member.services[service_id];
       if (serv) {
         return <li className="service-li" key={service_id}>
@@ -83,12 +82,12 @@ class Profile extends React.Component {
                 <p>{member.first_name} can host {member.hosting_max} guinea pigs at a time!</p>
               </div>
 
-              <div className="availability">
+              {/* <div className="availability">
                 <h3 className="prof-h3">Availability</h3>
                 <div className="calendar">
 
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="prof-middle">
               <div className="about-me">
