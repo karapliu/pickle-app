@@ -151,6 +151,7 @@ class ContactForm extends React.Component {
                   <input 
                     type="time" 
                     onChange={this.update('start_time')} 
+                    value="00:00"
                   />
                   <div className="i-datetime"><i className="far fa-clock"></i></div>
                 </div>
@@ -174,6 +175,7 @@ class ContactForm extends React.Component {
                 <input 
                   type="time" 
                   onChange={this.update('end_time')}
+                  value="00:00"
                   />
                 <div className="i-datetime"><i className="far fa-clock"></i></div>
               </div>

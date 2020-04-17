@@ -9,8 +9,88 @@ const Home = () => {
           <h1>Local, loving Guinea Pig Care</h1>
           <h2>Book trusted sitters who'll treat your <br />guinea pigs like family!</h2>
           <div className="flex-row jus-center">
-            <div className="home-search-form"></div>
-            <div className="home-search-form-2"></div>
+            <div className="home-search-form">
+              <p>What service do you need?</p>
+              <div className="flex-row">
+                <label className="home-serv-container">
+                  <input
+                    type="radio"
+                    name="h-service"
+                  />
+                  <div className="home-serv-item">
+                    <i className="fas fa-suitcase"></i>
+                    Boarding
+                  </div>
+                </label>
+                <label className="home-serv-container">
+                  <input
+                    type="radio"
+                    name="h-service"
+                  />
+                  <div className="home-serv-item">
+                    <i className="fas fa-home"></i>
+                    House Sitting
+                  </div>
+                </label>
+                <label className="home-serv-container">
+                  <input
+                    type="radio"
+                    name="h-service"
+                  />
+                  <div className="home-serv-item">
+                    <i className="fas fa-carrot"></i>
+                    Drop-In Visits
+                  </div>
+                </label>
+                <label className="home-serv-container">
+                  <input
+                    type="radio"
+                    name="h-service"
+                  />
+                  <div className="home-serv-item">
+                    <i className="fas fa-sun"></i>
+                    Day Care
+                  </div>
+                </label>
+                <label className="home-serv-container">
+                  <input
+                    type="radio"
+                    name="h-service"
+                  />
+                  <div className="home-serv-item">
+                    <img src={window.pawGrey} />
+                    Grooming
+                  </div>
+                </label>
+              </div>
+              <div className="flex-row">
+                <div className="h-search-input-c">
+                  <p>Located near</p>
+                  <input 
+                    type="text"
+                    className="home-input"
+                    placeholder="Zip Code" />
+                </div>
+                <div className="h-search-input-c">
+                  <p>For these days</p>
+                  <div className="h-search-time-c">
+                    <div className="home-cal">
+                      <div className="h-calendar"><i className="far fa-calendar-alt"></i></div>
+                      <input
+                        type="date" 
+                        className="home-input" />
+                    </div>
+                    <div className="home-cal">
+                      <div className="h-calendar"><i className="far fa-calendar-alt"></i></div>
+                      <input
+                        type="date"
+                        className="home-input" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <Link to="/search"><button className="session-form-submit">Search</button></Link>
+            </div>
           </div>
         </div>
       </div>
