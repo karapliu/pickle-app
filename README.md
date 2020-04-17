@@ -1,4 +1,4 @@
-# Pickle
+# Pickle 
 [**Pickle**](https://pickle-gpig-app.herokuapp.com/#/) (click for live demo), a Rover clone, is an online marketplace where users can buy and sell guinea pig services, such as boarding and grooming. After signing up, users can edit their profile information, which includes account information, profile photo, service prices, and add or remove their guinea pigs. Users can also look through all members and book services. 
 
 ![Alt Text](app/assets/images/home.gif)
@@ -24,7 +24,12 @@
 ## **Technologies**
 Pickle's backend is built with Ruby on Rails and PostgreSQL. The frontend is built with Javascript, React, and Redux. Heroku was used for deployment, and AWS was used for storing assets.
 
-### **Future Implementations**
+## **Brand Guidelines**
+![Image](/app/assets/images/brand-guidelines.jpg)
+
+---
+
+### Future Implementations
 * Search by filter, including Google Map API 
 * Editing/removing bookings
 * Reviews
