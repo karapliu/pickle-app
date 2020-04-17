@@ -6,6 +6,7 @@ import { selectAllServices } from '../../reducers/selectors';
 import { fetchGuineaPigs } from '../../actions/guinea_pig_actions';
 
 const mapStateToProps = (state, ownProps) => ({
+  currentMemberId: state.session.currentMemberId,
   member: state.entities.members[ownProps.match.params.memberId],
   services: selectAllServices(state),
   guineaPigs: state.entities.guineaPigs

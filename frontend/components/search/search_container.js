@@ -3,6 +3,7 @@ import Search from './search';
 import { fetchMembers } from '../../actions/member_actions';
 
 const mapStateToProps = state => ({
+  currentMemberId: state.session.currentMemberId,
   members: Object.values(state.entities.members)
 });
 

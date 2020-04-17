@@ -9,17 +9,23 @@ class Search extends React.Component {
   }
 
   render() {
-    const { members } = this.props;
+    const { members, currentMemberId } = this.props;
 
     if (!members) {
       return null;
     }
     
     const allMembers = [];
-
-    for (let i = 0; i < members.length; i++) {
-      let mem = members[i];
-      allMembers.push(<Link to={`/members/${mem.id}`}><SearchItem key={`mem-${mem.id}`} member={mem} num={i + 1} /></Link>)
+    let mems = members.slice();
+    for (let i = 0; i < mems.length; i++) {
+      let mem = mems[i];
+      if (mem.id === currentMemberId) {
+        mems = mems.slice(0, i).concat(mems.slice(i + 1))
+        i = i - 1;
+        continue;
+      } else {
+        allMembers.push(<Link to={`/members/${mem.id}`}><SearchItem key={`mem-${mem.id}`} member={mem} num={i + 1} /></Link>)
+      }
     }
 
     return (

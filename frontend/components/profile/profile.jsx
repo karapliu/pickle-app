@@ -10,7 +10,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    const { member, guineaPigs } = this.props;
+    const { member, guineaPigs, currentMemberId } = this.props;
 
     if (!member) {
       return null;
@@ -65,7 +65,7 @@ class Profile extends React.Component {
                 <p><i className="far fa-comments"></i> <span className="grey">Response Rate:</span> 100%</p>
                 <p><i className="far fa-clock"></i> <span className="grey">Response Time:</span> within an hour</p>
               </div>
-              <Link to={`/members/${member.id}/contact`}><button className="contact-button">Contact {member.first_name}</button></Link>
+              <Link to={member.id === currentMemberId ? '/account/profile/account-info' : `/members/${member.id}/contact`}><button className="contact-button">{member.id === currentMemberId ? 'Edit Profile' : `Contact ${member.first_name}`}</button></Link>
             </div>
           </div>
 
