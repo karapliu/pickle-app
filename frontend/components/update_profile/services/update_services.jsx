@@ -185,7 +185,7 @@ class UpdateServices extends React.Component {
 
             <div className="service-box">
               <div className="service-circle">
-                  <img src={window.paw} />
+                  <img src={window.pawWhite} />
               </div>
 
               <div className="switch-pos">
