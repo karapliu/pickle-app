@@ -31,3 +31,20 @@
   font-weight: 600;
   margin-bottom: 10px;
 }
+
+.sign-up-button {
+  display: block;
+  width: 140px;
+  height: 45px;
+  background-color: #83A05C;
+  border: #83A05C;
+  color: #FFFFFF;
+  font-size: 17px;
+  border-radius: 5px;
+  margin-top: 50%;
+  text-align: center;
+}
+
+.sign-up-button:hover {
+  background-color: #265936;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class Dropdown extends React.Component {
   logout(e) {
     e.preventDefault();
     this.props.logout()
-      .then(() => this.props.history.push('/'))
+      .then(() => <Redirect to="/" />)
   }
 
   render() {

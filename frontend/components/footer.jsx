@@ -10,9 +10,9 @@ const Footer = () => (
         <Link to="/">LinkedIn</Link>
         <Link to="/">AngelList</Link>
       </div>
-      <div className="footer-right">
-        <h3 className="footer-h3">Sign up!</h3>
-      </div>
+      {/* <div className="footer-right">
+        <Link to="/signup"><button className="sign-up-button">Sign up!</button></Link> */}
+      {/* </div> */}
     </div>
   </footer>
 );
