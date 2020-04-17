@@ -265,4 +265,3 @@ rini_grooming = MembersService.create!({price: 10, member_id: rini.id, service_i
 
 # BOOKINGS
 
-

@@ -9,6 +9,7 @@ class Dropdown extends React.Component {
     }
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   showMenu(e) {
@@ -25,8 +26,14 @@ class Dropdown extends React.Component {
     });
   }
 
+  logout(e) {
+    e.preventDefault();
+    this.props.logout()
+      .then(() => this.props.history.push('/'))
+  }
+
   render() {
-    const { currentMember, navLinksClass, logout } = this.props;
+    const { currentMember, navLinksClass } = this.props;
     return (
       <>
         { this.state.showMenu ? (
@@ -47,7 +54,7 @@ class Dropdown extends React.Component {
                 <Link to="/account">Dashboard</Link>
                 <Link to={`/members/${currentMember.id}`}>Profile</Link>
               </div>
-              <button onClick={logout}>Log out</button>
+              <button onClick={this.logout}>Log out</button>
             </div>
           </div>
           </div>
