@@ -5,6 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta property="og:title" content="Pickle" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://pickle-gpig-app.herokuapp.com/#/" />
+    <meta property="og:image" content='<%= image_url asset_path('pickle.png') %>'/>
+    <meta property="og:description" content="Site description" />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap" rel="stylesheet">
