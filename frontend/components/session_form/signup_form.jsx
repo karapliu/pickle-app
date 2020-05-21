@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const newMember = Object.assign({}, this.state, { ['zipcode']: parseInt(this.state.zipcode) });
     this.props.processForm(newMember)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/account/profile/account-info'));
   }
 
   update(field) {

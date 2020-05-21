@@ -6,15 +6,13 @@ class Profile extends React.Component {
   componentDidMount() {
     this.props.fetchMember(this.props.match.params.memberId);
     this.props.fetchServices(this.props.match.params.memberId);
-    this.props.fetchGuineaPigs(this.props.match.params.memberId)
+    this.props.fetchGuineaPigs(this.props.match.params.memberId);
   }
 
   render() {
     const { member, guineaPigs, currentMemberId } = this.props;
 
-    if (!member) {
-      return null;
-    }
+    if (!member) return null;
 
     const lastInitial = this.props.member.last_name.slice(0, 1)
     
@@ -35,12 +33,12 @@ class Profile extends React.Component {
 
       if (gPig) {
         if (gPig.photoUrl === "") {
-          return <div className="p-pig bg-green">
+          return <div key={pigId} className="p-pig bg-green">
             <img src={window.paw} />
             <h2 className="p-pig-name">{gPig.name}</h2>
           </div>
         } else {
-          return <div className="p-pig">
+          return <div key={pigId} className="p-pig">
             <img src={gPig.photoUrl} />
             <h2 className="p-pig-name">{gPig.name}</h2>
           </div>

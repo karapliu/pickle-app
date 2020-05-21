@@ -31,15 +31,20 @@ class YourPhotos extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('member[profile_pic]', this.state.photoFile);
-    $.ajax({
-      method: 'PATCH',
-      url: `/api/members/${this.props.currentMember.id}`,
-      data: formData,
-      contentType: false,
-      processData: false
-    }).then(() => this.props.history.push('/account/profile/services'));
+
+    if (this.state.photoFile) {
+      const formData = new FormData();
+      formData.append('member[profile_pic]', this.state.photoFile);
+      $.ajax({
+        method: 'PATCH',
+        url: `/api/members/${this.props.currentMember.id}`,
+        data: formData,
+        contentType: false,
+        processData: false
+      }).then(() => this.props.history.push('/account/profile/services'));
+    } else {
+      this.props.history.push('/account/profile/services');
+    }
   }
 
   render () {
