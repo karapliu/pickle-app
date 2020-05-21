@@ -29,66 +29,88 @@ class SignupForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value})
   }
 
-  renderErrors() {
-    const { errors } = this.props;
-    const errorsLis = errors.map((err, i) => (
-      <li key={`err-${i}`}>{err}</li>
-    ));
+  renderErrors(field) {
+    if (this.props.errors) {
+      for (let i = 0; i < this.props.errors.length; i++) {
+        let err = this.props.errors[i];
 
-    return (
-      <ul className="form-errors">{errorsLis}</ul>
-    );
+        if (err.includes(field)) {
+          if (err === "First name can't be blank" || err === "Last name can't be blank" || err === "Email can't be blank" || (err === "Zipcode is not a number" && this.state.zipcode === '') || (err.includes("Password is too short") && this.state.password === '')) {
+            return "This field is required."
+          } else if (err === "Email is invalid") {
+            return "Please enter a valid email address."
+          } else if (err === "Zipcode is not a number") {
+            return "Please enter a valid postcode."
+          } else if (err.includes("Password is too short") && this.state.password.length > 0) {
+            return "Please enter at least 8 characters."
+          } else {
+            return err;
+          }
+        }
+      }
+    }
+
+    return null;
   }
 
   render() {
     return (
       <div className="session-form-container">
-        <h1>Sign Up for Pickle </h1>
-        {this.renderErrors()}
+        <h1>Sign Up for Pickle</h1>
         <form className="session-form" onSubmit={this.handleSubmit}>
-          <label className="session-form-label">
+          <label className={this.renderErrors("First name") ? "red-text" : ""}>
             First name
             <input
               type="text"
               onChange={this.update('first_name')}
               value={this.state.first_name}
-              className="session-form-input" />
+              className={this.renderErrors("First name") ? "red-border" : ""} />
+            
+            <span className={this.renderErrors("First name") ? "signup-error" : "signup-error no-opacity"}>{this.renderErrors("First name")}</span>
           </label>
 
-          <label className="session-form-label">
+          <label className={this.renderErrors("Last name") ? "red-text" : ""}>
             Last name
             <input
               type="text"
               onChange={this.update('last_name')}
               value={this.state.last_name}
-              className="session-form-input" />
+              className={this.renderErrors("Last name") ? "red-border" : ""} />
+
+            <span className={this.renderErrors("Last name") ? "signup-error" : "signup-error no-opacity"}>{this.renderErrors("Last name")}</span>
           </label>
 
-          <label className="session-form-label">
+          <label className={this.renderErrors("Zipcode") ? "red-text" : ""}>
             Zipcode
             <input
               type="text"
               onChange={this.update('zipcode')}
               value={this.state.zipcode}
-              className="session-form-input" />
+              className={this.renderErrors("Zipcode") ? "red-border" : ""} />
+
+            <span className={this.renderErrors("Zipcode") ? "signup-error" : "signup-error no-opacity"}>{this.renderErrors("Zipcode")}</span>
           </label>
 
-          <label className="session-form-label">
+          <label className={this.renderErrors("Email") ? "red-text" : ""}>
             Email
             <input
-              type="email"
+              type="text"
               onChange={this.update('email')}
               value={this.state.email}
-              className="session-form-input" />
+              className={this.renderErrors("Email") ? "red-border" : ""} />
+
+            <span className={this.renderErrors("Email") ? "signup-error" : "signup-error no-opacity"}>{this.renderErrors("Email")}</span>
           </label>
 
-          <label className="session-form-label">
-            Password
+          <label className={this.renderErrors("Password") ? "red-text" : ""}>
+            Create a Password
             <input
               type="password"
               onChange={this.update('password')}
               value={this.state.password}
-              className="session-form-input" />
+              className={this.renderErrors("Password") ? "red-border" : ""} />
+
+            <span className={this.renderErrors("Password") ? "signup-error" : "signup-error no-opacity"}>{this.renderErrors("Password")}</span>
           </label>
 
           <button className="session-form-submit" type="submit">Sign Up</button>
