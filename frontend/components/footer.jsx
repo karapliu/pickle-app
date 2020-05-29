@@ -1,18 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Footer = () => (
   <footer className="pickle-footer">
     <div className="footer-container">
       <div className="footer-left">
         <h3 className="footer-h3">Learn More</h3>
-        <Link to="/">Github</Link>
-        <Link to="/">LinkedIn</Link>
-        <Link to="/">AngelList</Link>
+        <a target="_blank" href="https://github.com/karapliu">Github</a>
+        <a target="_blank" href="https://www.linkedin.com/in/karaliu/">LinkedIn</a>
+        <a target="_blank" href="https://angel.co/u/karaliu">AngelList</a>
       </div>
-      {/* <div className="footer-right">
-        <Link to="/signup"><button className="sign-up-button">Sign up!</button></Link> */}
-      {/* </div> */}
     </div>
   </footer>
 );
