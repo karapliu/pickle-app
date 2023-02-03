@@ -101,7 +101,7 @@ class Profile extends React.Component {
               <div className="right-box">
                 <div className="right-box-icon"><i className="fas fa-images"></i></div>
                 <h4>100%</h4>
-                <p>of clients received photo updates</p>
+                <p>of clients received photo updates.</p>
               </div>
             </div>
           </div>
